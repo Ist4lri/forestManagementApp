@@ -1,10 +1,10 @@
 from django import forms
 
-from .models import IncidentFormPost
+from .models import INCIDENT
 
 
 class PostFormIncident(forms.ModelForm):
 
     class Meta:
-        model = IncidentFormPost
+        model = INCIDENT
         fields = ('description_incident',)

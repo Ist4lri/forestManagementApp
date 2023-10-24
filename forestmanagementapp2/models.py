@@ -38,7 +38,7 @@ class INCIDENT(models.Model):
 class MISSION(models.Model):
     id_mission = models.IntegerField(primary_key=True)
     id_garde = models.ForeignKey(
-        GARDE, on_delete=models.CASCADE, primary_key=True)
+        GARDE, on_delete=models.CASCADE)
     description_mission = models.TextField()
     etat_mission = models.TextField()
 
@@ -55,14 +55,14 @@ class POSSEDE(models.Model):
     id_mission = models.ForeignKey(
         MISSION, on_delete=models.CASCADE, primary_key=True)
     id_garde = models.ForeignKey(
-        GARDE, on_delete=models.CASCADE, primary_key=True)
+        GARDE, on_delete=models.CASCADE)
     date_mission = models.TextField()
     etat_mission = models.TextField()
 
 
 class TOUCHE(models.Model):
     nom_foret = models.ForeignKey(
-        FORET, on_delete=models.CASCADE, primary_key=True)
+        FORET, on_delete=models.CASCADE)
     id_incident = models.ForeignKey(
         INCIDENT, on_delete=models.CASCADE, primary_key=True)
     date_incident = models.TextField()
