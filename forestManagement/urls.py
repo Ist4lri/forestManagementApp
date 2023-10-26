@@ -17,9 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from forestmanagementapp2.views import home_page
-
+from forestmanagementapp2.views import enter_forest
 urlpatterns = [
 
-
+    path('', enter_forest, name='saisir_nom_foret')
 ]
    

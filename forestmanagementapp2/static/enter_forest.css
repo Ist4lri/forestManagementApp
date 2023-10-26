@@ -1,0 +1,52 @@
+/* enter_forest.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #8E8E8E, #5D975D); /* Dégradé de verts en fond */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centre le contenu horizontalement */
+    color: black; /* Couleur du texte en vert foncé */
+}
+
+h1 {
+    font-size: 32px; /* Augmente la taille du titre */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Ombre douce sur le texte */
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond légèrement transparent */
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Ombre légère */
+    display: inline-block; /* Centre le formulaire au milieu de la page */
+    text-align: left;
+    max-width: 400px; /* Limitation de la largeur du formulaire */
+    margin: 0 auto; /* Centrer horizontalement */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; /* Augmente l'espacement en bas */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Augmente la taille du texte du champ */
+    background-color: black;
+}
+
+button[type="submit"] {
+    background: linear-gradient(45deg, #DAA520, #8B4513); /* Dégradé de couleurs pour le bouton (tons de brun et de doré) */
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer;
+    font-size: 16px; /* Augmente la taille du texte du bouton */
+    transition: background 0.3s ease-in-out; /* Animation de transition au survol */
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(45deg, #8B4513, #CD853F); /* Couleur du bouton change au survol */
+}
