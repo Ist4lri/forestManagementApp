@@ -19,7 +19,7 @@ class PostFormOrganism(forms.ModelForm):
 
 
 
-class ForetForm(forms.ModelForm):
+class ForestForm(forms.ModelForm):
     class Meta:
         model = FORET
         fields = ['nom_foret']

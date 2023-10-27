@@ -2,18 +2,20 @@
 import os
 import random
 from django.shortcuts import render, redirect
-from .forms import PostFormIncident, PostFormOrganism
+from .forms import PostFormIncident, PostFormOrganism, ForestForm
+from .models import FORET
 
 
 def enter_forest(request):
+    image_path = f"/forest_pic/{random.choice(randomImage())}"
+    forets = FORET.objects.values_list('nom_foret', flat=True)
     if request.method == 'POST':
-        form = ForetForm(request.POST)
+        form = ForestForm(request.POST)
         if form.is_valid():
             form.save()
     else:
-        form = ForetForm()
-    return render(request, 'enter_forest.html', {'form': form})
-
+        form = ForestForm()
+    return render(request, 'enter_forest.html', {'form': form, 'forets': forets, 'image_path':image_path})
 
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]
