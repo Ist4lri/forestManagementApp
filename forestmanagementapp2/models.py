@@ -18,7 +18,7 @@ class ORGANISM(models.Model):
     nom_organisme = models.TextField(primary_key=True)
     nutrition = models.TextField()
     facteur_emission = models.IntegerField()
-    quantite_consomméé_CO2 = models.IntegerField()
+    quantite_consommee_CO2 = models.IntegerField()
 
     class Meta:
         managed = False

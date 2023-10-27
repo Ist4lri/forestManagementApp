@@ -1,13 +1,13 @@
 {% extends "allHeadTemplated.html" %}
 {% block body %}
-<title>Formulaire d'incident</title>
+<title>{{title_page}}</title>
 </head>
     <body>
-          <h1>Describe the incident</h1>
-              <h3>Veuillez décrire l'incident que vous avez vus, et indiquer le lieu en question.</h3>
               <form method="POST">{% csrf_token %}
+              <h1>{{title_form}}</h1>
+              <h3>{{description_form}}</h3>
               {{ form.as_p }}
-              <button type="submit">Enregistrer l'incident</button>
-              <p>Merci de votre vigilance !</p>
+              <button type="submit">Enregistrer</button>
+              <p>Merci de votre participation !</p>
               </form>
 {% endblock %}
