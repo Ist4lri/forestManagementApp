@@ -10,10 +10,12 @@
 
 ### PG TODO :
 
-- [x] Créer les tables et les remplir (Fait par MM)
-- [ ] Formulaire pour incidents, et pour répertorier espèces
+- [ ] Créer les tables et les remplir (Fait par MM)
+- [x] Formulaire pour incidents, 
+- [ ] et pour répertorier espèces
 - [ ] Chercher des photos, et comment les implémenter
 - [ ] Page lsite espèce
+- [x] generate random background
 
 
 ### BOTH TODO :
