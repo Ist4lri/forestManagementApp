@@ -5,7 +5,7 @@ class FORET(models.Model):
     nom_foret = models.TextField(primary_key=True)
     localisation = models.TextField()
     densite = models.IntegerField()
-    superfice = models.IntegerField()
+    superficie = models.IntegerField()
     quantite_eau = models.IntegerField()
     composition_sol = models.TextField()
 

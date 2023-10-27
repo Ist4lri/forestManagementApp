@@ -1,17 +1,17 @@
 {% extends "allHeadTemplated.html" %}
 {% block body %}
-{% load static %}
+
 <html>
 <head>
     <title>Accueil</title>
+
 </head>
 <body>
-    <h1>Quelle forêt souhaitez-vous découvrir ?</h1>
-    <form method="post">
+        <form method="post" action="{% url 'enter_forest' %}/">
         {% csrf_token %}
 
+        <h1>Quelle forêt souhaitez-vous découvrir ?</h1>
         <select name="nom_foret">
-
             {% for foret in forets %}
                 <option value="{{ foret}}">{{ foret}}</option>
             {% endfor %}
