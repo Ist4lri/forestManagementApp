@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import INCIDENT, ORGANISM
+from .models import INCIDENT, ORGANISM, FORET
 
 
 class PostFormIncident(forms.ModelForm):
@@ -16,3 +16,10 @@ class PostFormOrganism(forms.ModelForm):
         model = ORGANISM
         fields = ('nom_organisme', 'nutrition',
                   'facteur_emission', 'quantite_consommee_CO2')
+
+
+
+class ForetForm(forms.ModelForm):
+    class Meta:
+        model = FORET
+        fields = ['nom_foret']

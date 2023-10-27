@@ -5,6 +5,16 @@ from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism
 
 
+def enter_forest(request):
+    if request.method == 'POST':
+        form = ForetForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = ForetForm()
+    return render(request, 'enter_forest.html', {'form': form})
+
+
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]
 
