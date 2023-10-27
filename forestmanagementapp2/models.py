@@ -11,7 +11,7 @@ class FORET(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'forestDB'
+        db_table = 'FORET'
 
 
 class ORGANISM(models.Model):
@@ -22,7 +22,7 @@ class ORGANISM(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'forestDB'
+        db_table = 'ORGANISM'
 
 
 class GARDE(models.Model):
@@ -38,7 +38,7 @@ class GARDE(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'forestDB'
+        db_table = 'GARDE'
 
 
 class INCIDENT(models.Model):
@@ -48,7 +48,7 @@ class INCIDENT(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'forestDB'
+        db_table = 'INCIDENT'
 
 
 class MISSION(models.Model):
@@ -60,7 +60,7 @@ class MISSION(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'forestDB'
+        db_table = 'MISSION'
 
 
 class CONTIENT(models.Model):
@@ -72,7 +72,7 @@ class CONTIENT(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'forestDB'
+        db_table = 'CONTIENT'
 
 
 class POSSEDE(models.Model):
@@ -85,7 +85,7 @@ class POSSEDE(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'forestDB'
+        db_table = 'POSSEDE'
 
 
 class TOUCHE(models.Model):
@@ -97,4 +97,4 @@ class TOUCHE(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'forestDB'
+        db_table = 'TOUCHE'

@@ -1,0 +1,101 @@
+/* Style général pour le formulaire */
+body {
+  background-image: url('/static/forest_pic/for1.jpg'); /* Assurez-vous de spécifier le chemin correct vers votre image de fond */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  /* Style pour le titre principal */
+  h1 {
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    
+  }
+  
+  /* Style pour le sous-titre */
+  h3 {
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    
+  }
+  
+  /* Style pour le paragraphe de remerciement */
+  p {
+    text-align: center;
+    margin-top: 20px;
+    
+  }
+  
+  /* Style pour les champs de formulaire */
+  form input[type="text"],
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+  }
+  
+  /* Style pour le bouton d'envoi */
+  form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #176200;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #176200;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }
+  
+  /* Style pour le bouton d'envoi au survol */
+  form button[type="submit"]:hover {
+    background-color: #00ae2e;
+    
+  }
+
+  button:hover {
+    background-color: #00ae2e;
+    
+  }
+  
+  /* Style pour les messages d'erreur */
+  .error-message {
+    color: #ff0000;
+    font-size: 14px;
+  }
+  
+  /* Style pour les messages de succès */
+  .success-message {
+    color: #008000;
+    font-size: 14px;
+  }

@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from forestmanagementapp2.views import v_post_new_incident
+from forestmanagementapp2.views import v_post_new_incident, v_form_submitted
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('incidentForm/', v_post_new_incident, name="incident_form")
+    path('incidentForm/', v_post_new_incident, name="incident_form"),
+    path('formSubmitted/', v_form_submitted, name='formSubmitted')
 ]
