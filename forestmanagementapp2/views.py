@@ -14,6 +14,9 @@ def enter_forest(request):
              # Vous pouvez rediriger l'utilisateur vers une autre page après la soumission
 
     else:
+
+
+
         form = ForetForm()
 
     return render(request, 'enter_forest.html', {'form': form})
