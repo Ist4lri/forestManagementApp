@@ -1,13 +1,8 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static  'css/formStyle.css' %}">
-    <title>Merci !</title>
+{% extends "allHeadTemplated.html" %}
+{% block body %}
+<title>Formulaire d'incident</title>
 </head>
-<body>
+    <body>
     <h1>Merci d'avoir répondu à cet incident !</h1>
     <button>Retour à l'accueil</button>
-</body>
-</html>
+{% endblock %}

@@ -1,12 +1,4 @@
 /* Style général pour le formulaire */
-body {
-  background-image: url('/static/forest_pic/for1.jpg'); /* Assurez-vous de spécifier le chemin correct vers votre image de fond */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
 form {
     max-width: 400px;
     margin: 0 auto;

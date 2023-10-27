@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static  'css/formStyle.css' %}">
+    <style>
+        body {
+            background-image: url("{% static image_path %}");
+            background-size: 100% 100%;
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+    </style>
+{% block body %}
+{% endblock %}
+</body>
+</html>
