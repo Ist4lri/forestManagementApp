@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+<head>
+    <title>Accueil</title>
+    <link rel="stylesheet" href="{% static 'enter_forest.css' %}">
+</head>
+<body>
+
+    <h1>Quelle forêt souhaitez-vous découvrir ?</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enregistrer</button>
+    </form>
+ <p> <br/> Ceci est le projet de programmation web de Master 2 Bioinformatique de Gouttebel Pierre-Loic et Monier Maelle </p>
+</body>
+</html>
+

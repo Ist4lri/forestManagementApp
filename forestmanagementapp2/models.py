@@ -11,18 +11,23 @@ class FORET(models.Model):
 
     class Meta:
         managed = False
+
         db_table = 'FORET'
+
 
 
 class ORGANISM(models.Model):
     nom_organisme = models.TextField(primary_key=True)
     nutrition = models.TextField()
     facteur_emission = models.IntegerField()
+
     quantite_consommee_CO2 = models.IntegerField()
 
     class Meta:
         managed = False
         db_table = 'ORGANISM'
+   
+
 
 
 class GARDE(models.Model):
@@ -38,7 +43,9 @@ class GARDE(models.Model):
 
     class Meta:
         managed = False
+
         db_table = 'GARDE'
+
 
 
 class INCIDENT(models.Model):
@@ -51,6 +58,7 @@ class INCIDENT(models.Model):
         db_table = 'INCIDENT'
 
 
+
 class MISSION(models.Model):
     id_mission = models.IntegerField(primary_key=True)
     id_garde = models.ForeignKey(
@@ -60,7 +68,10 @@ class MISSION(models.Model):
 
     class Meta:
         managed = False
+
         db_table = 'MISSION'
+
+        
 
 
 class CONTIENT(models.Model):
@@ -75,6 +86,7 @@ class CONTIENT(models.Model):
         db_table = 'CONTIENT'
 
 
+
 class POSSEDE(models.Model):
     id_mission = models.ForeignKey(
         MISSION, on_delete=models.CASCADE)
@@ -85,7 +97,9 @@ class POSSEDE(models.Model):
 
     class Meta:
         managed = False
+
         db_table = 'POSSEDE'
+
 
 
 class TOUCHE(models.Model):
@@ -97,4 +111,6 @@ class TOUCHE(models.Model):
 
     class Meta:
         managed = False
+
         db_table = 'TOUCHE'
+
