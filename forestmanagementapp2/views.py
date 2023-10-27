@@ -11,7 +11,7 @@ def enter_forest(request):
         form = ForetForm(request.POST)
         if form.is_valid():
             form.save()  # Sauvegardez les données ici
-            # Vous pouvez rediriger l'utilisateur vers une autre page après la soumission
+             # Vous pouvez rediriger l'utilisateur vers une autre page après la soumission
 
     else:
         form = ForetForm()
