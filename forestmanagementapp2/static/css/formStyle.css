@@ -52,8 +52,25 @@ form {
     box-shadow: 0 0 13px rgba(0, 105, 2, 0.5);
   }
 
-  form input[type="number"] {
+  input[type="number"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
     text-align: left;
+    color: #333;
+  }
+
+  input[type="number"]:hover {
+    border-color: #007810;
+  }
+
+  input[type="number"]:focus {
+    outline: none;
+    border-color: #03b92d; 
+    box-shadow: 0 0 13px rgba(0, 105, 2, 0.5);
   }
   
   /* Style pour le bouton d'envoi */

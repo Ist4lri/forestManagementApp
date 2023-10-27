@@ -12,8 +12,8 @@
 
 - [ ] Créer les tables et les remplir (Fait par MM)
 - [x] Formulaire pour incidents, 
-- [ ] et pour répertorier espèces
-- [ ] Chercher des photos, et comment les implémenter
+- [x] et pour répertorier espèces
+- [x] Chercher des photos, et comment les implémenter
 - [ ] Page lsite espèce
 - [x] generate random background
 
