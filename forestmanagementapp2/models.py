@@ -1,4 +1,5 @@
 from django.db import models
+from slugify import slugify
 
 
 class FORET(models.Model):
@@ -8,6 +9,7 @@ class FORET(models.Model):
     superficie = models.IntegerField()
     quantite_eau = models.IntegerField()
     composition_sol = models.TextField()
+
 
     class Meta:
         managed = False
