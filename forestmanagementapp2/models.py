@@ -1,117 +1,96 @@
-from django.db import models
-from slugify import slugify
+
+from django.db import migrations,models
 
 
-class FORET(models.Model):
-    nom_foret = models.TextField(primary_key=True)
-    localisation = models.TextField()
-    densite = models.IntegerField()
-    superficie = models.IntegerField()
-    quantite_eau = models.IntegerField()
-    composition_sol = models.TextField()
-
-
-    class Meta:
-        managed = False
-        db_table = 'FORET'
-
-
-
-class ORGANISM(models.Model):
-    nom_organisme = models.TextField(primary_key=True)
-    nutrition = models.TextField()
-    facteur_emission = models.IntegerField()
-
-    quantite_consommee_CO2 = models.IntegerField()
-
-    class Meta:
-        managed = False
-        db_table = 'ORGANISM'
-   
-
-
-
-class GARDE(models.Model):
-    id_garde = models.IntegerField(primary_key=True)
-    nom_foret = models.ForeignKey(
-        FORET, on_delete=models.CASCADE)
-    nom_garde = models.TextField()
-    prenom_garde = models.TextField()
-    adresse_garde = models.TextField()
-    num_telephone = models.TextField()
-    mail_garde = models.TextField()
-    date_embauche = models.TextField()
-
-    class Meta:
-        managed = False
-
-        db_table = 'GARDE'
-
-
-
-class INCIDENT(models.Model):
-    id_incident = models.IntegerField(primary_key=True)
-    description_incident = models.TextField()
-    statut_incident = models.TextField()
-
-    class Meta:
-        managed = False
-        db_table = 'INCIDENT'
-
-
-
-class MISSION(models.Model):
-    id_mission = models.IntegerField(primary_key=True)
-    id_garde = models.ForeignKey(
-        GARDE, on_delete=models.CASCADE)
-    description_mission = models.TextField()
-    etat_mission = models.TextField()
-
-    class Meta:
-        managed = False
-
-        db_table = 'MISSION'
-
-        
-
-
-class CONTIENT(models.Model):
-    nom_foret = models.ForeignKey(
-        FORET, on_delete=models.CASCADE, primary_key=True)
-    nom_organisme = models.ForeignKey(
-        ORGANISM, on_delete=models.CASCADE)
-    nombre_organisme = models.IntegerField()
+class Contient(models.Model):
+    id_foret = models.OneToOneField('Foret', models.DO_NOTHING, db_column='id_foret', primary_key=True, blank=True   )
+    id_organisme = models.ForeignKey('Organisme', models.DO_NOTHING, db_column='id_organisme', blank=True   )
+    nombre_organisme = models.IntegerField(blank=True   )
 
     class Meta:
         managed = False
         db_table = 'CONTIENT'
 
 
-
-class POSSEDE(models.Model):
-    id_mission = models.ForeignKey(
-        MISSION, on_delete=models.CASCADE)
-    id_garde = models.ForeignKey(
-        GARDE, on_delete=models.CASCADE, primary_key=True)
-    date_mission = models.TextField()
-    etat_mission = models.TextField()
+class Foret(models.Model):
+    id_foret = models.AutoField(primary_key=True, blank=True   )
+    nom_foret = models.TextField(blank=True   )
+    localisation = models.TextField(blank=True   )
+    densite = models.IntegerField(blank=True   )
+    superficie = models.IntegerField(blank=True   )
+    quantite_eau = models.IntegerField(blank=True   )
+    composition_sol = models.TextField(blank=True   )
+    description = models.TextField(blank=True   )
 
     class Meta:
         managed = False
+        db_table = 'FORET'
 
+
+class Garde(models.Model):
+    id_garde = models.AutoField(primary_key=True, blank=True   )
+    id_foret = models.ForeignKey(Foret, models.DO_NOTHING, db_column='id_foret', blank=True   )
+    nom_garde = models.TextField(blank=True   )
+    prenom_garde = models.TextField(blank=True   )
+    adresse_garde = models.TextField(blank=True   )
+    num_telephone = models.TextField(blank=True   )
+    mail_garde = models.TextField(blank=True   )
+    date_embauche = models.TextField(blank=True   )
+
+    class Meta:
+        managed = False
+        db_table = 'GARDE'
+
+
+class Incident(models.Model):
+    id_incident = models.AutoField(primary_key=True, blank=True   )
+    description_incident = models.TextField(blank=True   )
+    statut_incident = models.TextField(blank=True   )
+
+    class Meta:
+        managed = False
+        db_table = 'INCIDENT'
+
+
+class Mission(models.Model):
+    id_mission = models.AutoField(primary_key=True, blank=True   )
+    id_garde = models.ForeignKey(Garde, models.DO_NOTHING, db_column='id_garde', blank=True   )
+    description_mission = models.TextField(blank=True   )
+    etat_mission = models.TextField(blank=True   )
+
+    class Meta:
+        managed = False
+        db_table = 'MISSION'
+
+
+class Organisme(models.Model):
+    id_organisme = models.AutoField(primary_key=True, blank=True   )
+    nom_organisme = models.TextField(blank=True   )
+    nutrition = models.TextField(blank=True   )
+    facteur_emission = models.IntegerField(blank=True   )
+    quantite_consommee_CO2 = models.IntegerField(db_column='quantite_consommee_CO2', blank=True   )  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'ORGANISME'
+
+
+class Possede(models.Model):
+    id_mission = models.OneToOneField(Mission, models.DO_NOTHING, db_column='id_mission', primary_key=True, blank=True   )
+    id_garde = models.ForeignKey(Garde, models.DO_NOTHING, db_column='id_garde', blank=True   )
+    date_mission = models.TextField(blank=True   )
+    etat_mission = models.TextField(blank=True   )
+
+    class Meta:
+        managed = False
         db_table = 'POSSEDE'
 
 
-
-class TOUCHE(models.Model):
-    nom_foret = models.ForeignKey(
-        FORET, on_delete=models.CASCADE)
-    id_incident = models.ForeignKey(
-        INCIDENT, on_delete=models.CASCADE, primary_key=True)
-    date_incident = models.TextField()
+class Touche(models.Model):
+    id_foret = models.OneToOneField(Foret, models.DO_NOTHING, db_column='id_foret', primary_key=True, blank=True   )
+    id_incident = models.ForeignKey(Incident, models.DO_NOTHING, db_column='id_incident', blank=True   )
+    date_incident = models.TextField(blank=True   )
 
     class Meta:
         managed = False
-
         db_table = 'TOUCHE'
-

@@ -1,36 +1,41 @@
-
-<!DOCTYPE html>
-{%load static %}
+{% extends "allHeadTemplated.html" %}
+{% block body %}
+{% load static %}
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'home_page.css' %}">
-    <title>Accueil de la {{nom_foret}}</title>
+    <title>Accueil de la {{ nom_foret }}</title>
 </head>
 <body>
     <header>
-        <h1>Forêt de l'Exemple</h1>
-        <nav>
-            <ul>
-                <li><a href="#photos">Photos</a></li>
-                <li><a href="#organismes">Organismes</a></li>
-                <li><a href="#signaler-incident">Signaler un Incident</a></li>
-            </ul>
-        </nav>
+        <h1>{{ nom_foret }}</h1>
+         <a class="login-link" href="#Seconnecter">Se connecter</a>
+
     </header>
+
+    <section id="descriptions">
+        <h2><a href="#descriptions">Descriptions</a></h2>
+        <!-- Contenu pour la section "Descriptions" -->
+    </section>
+
     <section id="photos">
-        <h2>Photos de la Forêt</h2>
-        <!-- Inclure ici du contenu sur les photos de la forêt -->
+        <h2><a href="#photos">Photos</a></h2>
+        <!-- Contenu pour la section "Photos" -->
     </section>
+
     <section id="organismes">
-        <h2>Organismes de la Forêt</h2>
-        <!-- Inclure ici du contenu sur les organismes de la forêt -->
+        <h2><a href="#organismes">Organismes</a></h2>
+        <!-- Contenu pour la section "Organismes" -->
     </section>
+
     <section id="signaler-incident">
-        <h2>Signaler un Incident</h2>
-        <!-- Inclure ici un formulaire pour signaler un incident -->
+        <h2><a href="#signaler-incident">Signaler un Incident</a></h2>
+        <!-- Formulaire pour signaler un incident -->
     </section>
+
     <footer>
-        <p>&copy; 2023 Forêt de l'Exemple</p>
+        <p>&copy; 2023 {{ nom_foret }}</p>
     </footer>
 </body>
 </html>
+{% endblock %}

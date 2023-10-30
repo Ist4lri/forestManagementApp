@@ -3,28 +3,29 @@ import os
 import random
 from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
-from .models import FORET
-from django.db.models import Q
+from .models import Foret
+import re
 
 
 
 def enter_forest(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
-    forets = FORET.objects.values_list('nom_foret')  # Liste des forêts de votre base de données
+    forets = Foret.objects.values_list('nom_foret', flat=True)
+    forets = [re.sub(r'[^\w\s]', '', nom.strip()) for nom in forets]
 
     if request.method == 'POST':
         form = ForestForm(request.POST)
         if form.is_valid():
-            nom_foret = form.cleaned_data['nom_foret']  # Récupérez le nom de la forêt à partir du formulaire
-            return redirect('home_page', nom_foret=nom_foret)  # Redirigez vers la page home_page avec le nom de la forêt
+            foret = form.cleaned_data['nom_foret']
+            return redirect('home_page', nom_foret=foret)
 
     else:
         form = ForestForm()
 
     return render(request, 'enter_forest.html', {'foret': form, 'forets': forets, 'image_path': image_path})
-
 def home_page(request, nom_foret):
-    return render(request, 'home_page.html', {'nom_foret':nom_foret})
+    image_path = f"/forest_pic/{random.choice(randomImage())}"
+    return render(request, 'home_page.html', {'nom_foret':nom_foret, 'image_path':image_path})
 
 
 
