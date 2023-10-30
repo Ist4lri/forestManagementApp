@@ -27,31 +27,6 @@ def home_page(request, nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     return render(request, 'home_page.html', {'nom_foret':nom_foret, 'image_path':image_path})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]
 
