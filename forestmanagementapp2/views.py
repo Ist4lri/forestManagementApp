@@ -10,22 +10,20 @@ from django.db.models import Q
 
 def enter_forest(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
-    forets = FORET.objects.values_list('nom_foret', flat=True) #Liste des foret de ma database
+    forets = FORET.objects.values_list('nom_foret')  # Liste des forêts de votre base de données
+
     if request.method == 'POST':
         form = ForestForm(request.POST)
-        form.save()
-        nom_foret = form.cleaned_data['nom_foret']
-        print(nom_foret)
-        foret = FORET.objects.filter(Q(nom_foret__icontains=nom_foret)).first()
-        return redirect('home_page', nom_foret=foret.nom_foret)
+        if form.is_valid():
+            nom_foret = form.cleaned_data['nom_foret']  # Récupérez le nom de la forêt à partir du formulaire
+            return redirect('home_page', nom_foret=nom_foret)  # Redirigez vers la page home_page avec le nom de la forêt
+
     else:
         form = ForestForm()
 
-
-    return render(request, 'enter_forest.html', {'form': form, 'forets': forets, 'image_path': image_path})
+    return render(request, 'enter_forest.html', {'foret': form, 'forets': forets, 'image_path': image_path})
 
 def home_page(request, nom_foret):
-
     return render(request, 'home_page.html', {'nom_foret':nom_foret})
 
 

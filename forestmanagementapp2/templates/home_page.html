@@ -1,17 +1,36 @@
+
 <!DOCTYPE html>
+{%load static %}
 <html>
 <head>
-    <title>{{nom_foret}}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home_page.css' %}">
+    <title>Accueil de la {{nom_foret}}</title>
 </head>
 <body>
     <header>
-        <h1>Bienvenue dans la {{nom_foret}} !</h1>
+        <h1>Forêt de l'Exemple</h1>
+        <nav>
+            <ul>
+                <li><a href="#photos">Photos</a></li>
+                <li><a href="#organismes">Organismes</a></li>
+                <li><a href="#signaler-incident">Signaler un Incident</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-        <div class="description">
-            <p>La {{nom_foret}} </p>
-        </div>
-    </main>
-
+    <section id="photos">
+        <h2>Photos de la Forêt</h2>
+        <!-- Inclure ici du contenu sur les photos de la forêt -->
+    </section>
+    <section id="organismes">
+        <h2>Organismes de la Forêt</h2>
+        <!-- Inclure ici du contenu sur les organismes de la forêt -->
+    </section>
+    <section id="signaler-incident">
+        <h2>Signaler un Incident</h2>
+        <!-- Inclure ici un formulaire pour signaler un incident -->
+    </section>
+    <footer>
+        <p>&copy; 2023 Forêt de l'Exemple</p>
+    </footer>
 </body>
 </html>
