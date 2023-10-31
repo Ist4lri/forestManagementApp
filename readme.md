@@ -11,17 +11,17 @@
 
 
 ### PG TODO :
-
-- [ ] Créer les tables et les remplir (Fait par MM)
 - [x] Formulaire pour incidents, 
-- [ ] et pour répertorier espèces
-- [ ] Chercher des photos, et comment les implémenter
-- [ ] Page lsite espèce
+- [x] et pour répertorier espèces
+- [x] Page de remerciement pour avoir fait un formulaire.
+- [x] Chercher des photos, et comment les implémenter
+- [x] Page lsite espèce
 - [x] generate random background
 
 
 ### BOTH TODO :
 
+- [x] Créer les tables et les remplir
 - [ ] Faire un login et des comptes
 - [ ] faire une carte avec MAPS
 

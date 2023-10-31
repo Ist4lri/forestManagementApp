@@ -17,16 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from forestmanagementapp2.views import v_post_new_incident, v_form_submitted, v_register_new_species, enter_forest,home_page,connexion,organism_info
+from forestmanagementapp2.views import v_post_new_incident, v_form_submitted, v_register_new_species, enter_forest,home_page,connexion,organism_info, v_list_of_species
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('choixforet/',enter_forest, name="enter_forest"),
+    path('choixforet/', enter_forest, name="enter_forest"),
     path('accueil/<str:nom_foret>/', home_page, name='home_page'),
     path('incidentForm/', v_post_new_incident, name="incident_form"),
     path('formSubmitted/', v_form_submitted, name='formSubmitted'),
     path('registerSpecies/', v_register_new_species, name='register_species'),
+    path('listOfSpecies/', v_list_of_species, name="list_species"),
     path('login/',connexion, name='connexion'),
     path('info_org', organism_info, name='organism_info')
+
 ]
-   
