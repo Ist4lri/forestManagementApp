@@ -2,8 +2,10 @@
 
 
 ### MM TODO :
-- [ ] Faire la page 'HOME', page d'acceuil
-- [ ] Voir pour créer des menu, avec différentes fonctionnalités
+- [x] Faire la page d'accueil pour choisir la foret 
+- [x] Faire la home_page
+- [x] Voir pour créer des menu, avec différentes fonctionnalités
+- [x] Page login
 - [ ] MaJ des éléments de la forêt, Liste des missions (A faire après login et formu)
 - [ ] Designer la fiche espèce 
 

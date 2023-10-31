@@ -1,17 +1,40 @@
-<!DOCTYPE html>
+{% extends "allHeadTemplated.html" %}
+{% block body %}
+{% load static %}
 <html>
 <head>
-    <title>{{nom_foret}} ! </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home_page.css' %}">
+    <title>Accueil de la {{ nom_foret }}</title>
 </head>
 <body>
     <header>
-        <h1>Bienvenue dans la {{nom_foret}} !</h1>
+        <h1>{{ nom_foret }}</h1>
+        <a class="login-link" href="{% url 'connexion' %}">Se connecter</a>
     </header>
-    <main>
-        <div class="description">
-            <p>La {{nom_foret]] </p>
-        </div>
-    </main>
 
+    <section class="section-description">
+        <h2> A propos : </h2>
+        <p>{{ description }}</p>
+    </section>
+
+    <section id="photos">
+        <h2><a href="#photos">Photos</a></h2>
+        <!-- Contenu pour la section "Photos" -->
+    </section>
+
+    <section id="organismes">
+        <h2><a href="#organismes">Organismes</a></h2>
+        <!-- Contenu pour la section "Organismes" -->
+    </section>
+
+    <section id="signaler-incident">
+        <h2><a href="{% url 'incident_form' %}">Signaler un Incident</a></h2>
+        <!-- Formulaire pour signaler un incident -->
+    </section>
+
+    <footer>
+        <p>&copy; 2023 {{ nom_foret }}</p>
+    </footer>
 </body>
 </html>
+{% endblock %}

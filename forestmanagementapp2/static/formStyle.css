@@ -8,7 +8,7 @@ form {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  
+
   /* Style pour le titre principal */
   h1 {
     font-size: 30px;
@@ -16,7 +16,7 @@ form {
     text-align: center;
     margin-bottom: 20px;
   }
-  
+
   /* Style pour le sous-titre */
   h3 {
     font-size: 15px;
@@ -24,13 +24,13 @@ form {
     text-align: center;
     margin-bottom: 20px;
   }
-  
+
   /* Style pour le paragraphe de remerciement */
   p {
     text-align: center;
     margin-top: 20px;
   }
-  
+
   /* Style pour les champs de formulaire */
   form input[type="text"],
   form textarea {
@@ -48,14 +48,14 @@ form {
 
   form textarea:focus {
     outline: none;
-    border-color: #03b92d; 
+    border-color: #03b92d;
     box-shadow: 0 0 13px rgba(0, 105, 2, 0.5);
   }
 
   form input[type="number"] {
     text-align: left;
   }
-  
+
   /* Style pour le bouton d'envoi */
   form button {
     width: 100%;
@@ -65,7 +65,7 @@ form {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    
+
   }
 
   button {
@@ -76,26 +76,26 @@ form {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    
+
   }
-  
+
   /* Style pour le bouton d'envoi au survol */
   form button[type="submit"]:hover {
     background-color: #00ae2e;
-    
+
   }
 
   button:hover {
     background-color: #00ae2e;
-    
+
   }
-  
+
   /* Style pour les messages d'erreur */
   .error-message {
     color: #ff0000;
     font-size: 14px;
   }
-  
+
   /* Style pour les messages de succès */
   .success-message {
     color: #008000;

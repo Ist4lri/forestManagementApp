@@ -1,0 +1,38 @@
+{% extends "allHeadTemplated.html" %}
+{% block body %}
+{% load static %}
+<html>
+<head>
+     <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+    <title>Page de Connexion</title>
+
+</head>
+<body>
+    <form action="process_login.php" method="post" onsubmit="return validateForm()">
+        <h1>Connexion</h1>
+         <p> Si vous êtes un garde forestier, veuillez vous authentifier : </p>
+        <label for="username">Nom d'utilisateur :</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Se connecter">
+    </form>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("Veuillez remplir tous les champs.");
+                return false; // Empêche l'envoi du formulaire
+            }
+
+            return true; // Le formulaire est soumis si les champs sont remplis
+        }
+    </script>
+</body>
+</html>
+{% endblock %}

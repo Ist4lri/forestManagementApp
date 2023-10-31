@@ -1,4 +1,4 @@
-/* Styles pour la page de sélection de forêt */
+/* Styles pour la page de connexion */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
@@ -10,7 +10,7 @@ h1 {
 }
 
 form {
-    max-width: 400px;
+    max-width: 300px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
@@ -19,15 +19,22 @@ form {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-select {
+label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 5px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-button {
+input[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #388E3C; /* Couleur du bouton */
@@ -38,11 +45,6 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+input[type="submit"]:hover {
     background-color: #176200; /* Couleur au survol */
-}
-
-p {
-    margin-top: 20px;
-    color: #555;
 }
