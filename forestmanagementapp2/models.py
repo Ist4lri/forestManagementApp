@@ -22,6 +22,11 @@ class Foret(models.Model):
     composition_sol = models.TextField(blank=True   )
     description = models.TextField(blank=True   )
 
+    def __str__(self):
+        return self.nom_foret
+
+    def get_description(self):
+         return self.description
     class Meta:
         managed = False
         db_table = 'FORET'

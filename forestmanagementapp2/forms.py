@@ -22,4 +22,4 @@ class PostFormOrganism(forms.ModelForm):
 class ForestForm(forms.ModelForm):
     class Meta:
         model = Foret
-        fields = ['nom_foret']
+        fields = ('nom_foret','description','localisation','superficie','composition_sol','quantite_eau', 'id_foret')
