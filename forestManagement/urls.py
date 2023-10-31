@@ -29,6 +29,6 @@ urlpatterns = [
     path('registerSpecies/', v_register_new_species, name='register_species'),
     path('listOfSpecies/<str:nom_foret>/', v_list_of_species, name="list_species"),
     path('login/', connexion, name='connexion'),
-    path('info_org/', organism_info, name='organism_info')
+    path('info_org/<str:nom_organisme>', organism_info, name='organism_info')
 
 ]

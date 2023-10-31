@@ -15,7 +15,9 @@
 </head>
 <body>
     <h1>Photo de l'organisme</h1>
-    <img src="{% static '/organism_pic/Bubo_bubo.jpg' %}" alt="Image de l'organisme">
+      <img src="{% static '/organism_pic/'|add:oneSpecies|add:'.jpg' %}" alt="Image de l'organisme">
+
+
 </body>
 </html>
 {% endblock %}
