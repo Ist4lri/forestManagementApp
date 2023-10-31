@@ -99,6 +99,9 @@ def v_register_new_species(request):
         'form': form,
     })
 
+def organism_info(request):
+    image_path = f"/forest_pic/{random.choice(randomImage())}"
+    return render(request, 'info_organism.html', {'image_path':image_path})
 
 def v_list_of_species(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
