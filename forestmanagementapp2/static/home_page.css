@@ -8,7 +8,7 @@ body {
 
 header {
     background-color: #388E3C; /* Nouveau vert */
-    color: #fff; /* Texte en blanc pour le contraste */
+    color: black; /* Texte en blanc pour le contraste */
     padding: 20px; /* Espace intérieur du header */
     text-align: center; /* Centre le contenu du header horizontalement */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère en dessous du header */
