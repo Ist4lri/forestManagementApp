@@ -107,10 +107,10 @@ def organism_info(request):
     return render(request, 'info_organism.html', {'image_path': image_path})
 
 
-def v_list_of_species(request):
+def v_list_of_species(request,nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     return render(request, "listOfSpecies.html", {
         'image_path': image_path,
-        'foret': "exemple",
+        'foret': nom_foret,
         'species': Organisme.objects.all()
     })

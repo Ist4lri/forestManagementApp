@@ -27,7 +27,7 @@ urlpatterns = [
     path('incidentForm/', v_post_new_incident, name="incident_form"),
     path('formSubmitted/', v_form_submitted, name='formSubmitted'),
     path('registerSpecies/', v_register_new_species, name='register_species'),
-    path('listOfSpecies/', v_list_of_species, name="list_species"),
+    path('listOfSpecies/<str:nom_foret>/', v_list_of_species, name="list_species"),
     path('login/', connexion, name='connexion'),
     path('info_org/', organism_info, name='organism_info')
 
