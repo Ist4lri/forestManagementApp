@@ -104,7 +104,7 @@ def v_register_new_species(request):
 
 def organism_info(request,nom_organisme):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
-    print(nom_organisme)
+
     return render(request, 'info_organism.html', {'image_path': image_path, 'oneSpecies':nom_organisme})
 
 
