@@ -3,14 +3,9 @@ import os
 import random
 from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponseRedirect
 from .models import Foret
-import re
-from django.db.models import Q
-
-
-from django.shortcuts import render, redirect
-from .models import Foret
-from .forms import ForestForm
 
 def enter_forest(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
@@ -38,6 +33,20 @@ def home_page(request, nom_foret):
     foret = Foret.objects.get(nom_foret=nom_foret)
     description = foret.get_description()
     return render(request, 'home_page.html', {'nom_foret':nom_foret, 'image_path':image_path,'description':description})
+
+def connexion(request):
+    image_path = f"/forest_pic/{random.choice(randomImage())}"
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect('/tableau_de_bord/')  # Rediriger vers la page de tableau de bord après connexion
+        else:
+            return render(request, 'connexion.html', {'error_message': 'Nom d\'utilisateur ou mot de passe incorrect'})
+    else:
+        return render(request, 'login.html',{'image_path':image_path})
 
 
 def randomImage():
