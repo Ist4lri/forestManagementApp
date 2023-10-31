@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from forestmanagementapp2.views import v_post_new_incident, v_form_submitted, v_register_new_species, enter_forest,home_page,connexion
+from forestmanagementapp2.views import v_post_new_incident, v_form_submitted, v_register_new_species, enter_forest,home_page,connexion,organism_info
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +26,7 @@ urlpatterns = [
     path('incidentForm/', v_post_new_incident, name="incident_form"),
     path('formSubmitted/', v_form_submitted, name='formSubmitted'),
     path('registerSpecies/', v_register_new_species, name='register_species'),
-    path('login/',connexion, name='connexion')
+    path('login/',connexion, name='connexion'),
+    path('info_org', organism_info, name='organism_info')
 ]
    
