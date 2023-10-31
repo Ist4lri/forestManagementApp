@@ -1,10 +1,10 @@
 import os
 import random
 from django.shortcuts import render, redirect
-from .forms import PostFormIncident, PostFormOrganism, ForestForm
+from .forms import PostFormIncident, PostFormOrganism, ForestForm, OrganismForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
-from .models import Foret, Organisme
+from .models import Foret, Organisme, Contient
 
 
 def enter_forest(request):
@@ -107,10 +107,27 @@ def organism_info(request):
     return render(request, 'info_organism.html', {'image_path': image_path})
 
 
-def v_list_of_species(request,nom_foret):
+def v_list_of_species(request, nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
+    forest = Foret.objects.get(nom_foret=nom_foret)
+    #Je récupère l'id_foret correspondant car dans la table contient j'en ai besoin
+    id_forest = forest.pk
+    print(id_forest)
+    #Je récupère dans la table contient les id_organismes qui correpondent à mon id_foret
+    contient_entries = Contient.objects.filter(id_foret=id_forest).values_list('id_organisme', flat=True)
+
+    # Je transforme le QuerySet en une liste Python qui contient la liste de mes id_foret
+    id_organismes = list(contient_entries)
+
+
+    # Je cherche les noms d'organismes associés aux id de ma liste id_organismes
+    organismes= Organisme.objects.filter(id_organisme__in=id_organismes).values_list('nom_organisme', flat=True)
+    list_organismes=list(organismes)
+
+
     return render(request, "listOfSpecies.html", {
         'image_path': image_path,
         'foret': nom_foret,
-        'species': Organisme.objects.all()
+        'species':list_organismes
     })
+
