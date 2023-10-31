@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import migrations, models
 
 
 class Contient(models.Model):
@@ -15,13 +15,13 @@ class Contient(models.Model):
 
 class Foret(models.Model):
     id_foret = models.AutoField(primary_key=True)
-    nom_foret = models.TextField()
-    localisation = models.TextField()
-    densite = models.IntegerField()
-    superficie = models.IntegerField()
-    quantite_eau = models.IntegerField()
-    composition_sol = models.TextField()
-    description = models.TextField()
+    nom_foret = models.TextField(blank=True)
+    localisation = models.TextField(blank=True)
+    densite = models.IntegerField(blank=True)
+    superficie = models.IntegerField(blank=True)
+    quantite_eau = models.IntegerField(blank=True)
+    composition_sol = models.TextField(blank=True)
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.nom_foret

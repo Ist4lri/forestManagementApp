@@ -14,18 +14,20 @@ def enter_forest(request):
 
     if request.method == 'POST':
         form = ForestForm(request.POST)
+        print("ok")
         if form.is_valid():
+            print("ok")
             foretclean = form.cleaned_data['nom_foret']
-            # Recherche de la forêt avec le nom_foret correspondant
+            print(foretclean)
             try:
                 foret = Foret.objects.get(nom_foret=foretclean)
+                print(foret)
                 return redirect('home_page', nom_foret=foret)
             except Foret.DoesNotExist:
-                foret = None  # Si la forêt n'est pas trouvée, foret est None
-
+                foret = None
+                print(foret)
     else:
         form = ForestForm()
-
     return render(request, 'enter_forest.html', {'foret': form, 'forets': forets, 'image_path': image_path, 'foret_result': foret})
 
 
@@ -99,9 +101,11 @@ def v_register_new_species(request):
         'form': form,
     })
 
+
 def organism_info(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
-    return render(request, 'info_organism.html', {'image_path':image_path})
+    return render(request, 'info_organism.html', {'image_path': image_path})
+
 
 def v_list_of_species(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
