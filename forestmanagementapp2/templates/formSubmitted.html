@@ -1,8 +1,15 @@
 {% extends "allHeadTemplated.html" %}
+{% load static %}
 {% block body %}
+<link rel="stylesheet" type="text/css" href="{% static  'cssSubmit.css' %}">
 <title>Merci !</title>
 </head>
-    <body>
-    <h1>Merci d'avoir remplis ce formulaire !</h1>
-    <button>Retour à l'accueil</button>
+<div class="container">
+    <div class="center-content">
+        <h1>Merci d'avoir rempli ce formulaire !</h1>
+        <form action="{% url 'enter_forest' %}">
+            <button type="submit">Retour à l'accueil</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

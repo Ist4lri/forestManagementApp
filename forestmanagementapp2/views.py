@@ -1,11 +1,11 @@
-
 import os
 import random
 from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
-from .models import Foret
+from .models import Foret, Organisme
+
 
 def enter_forest(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
@@ -28,11 +28,13 @@ def enter_forest(request):
 
     return render(request, 'enter_forest.html', {'foret': form, 'forets': forets, 'image_path': image_path, 'foret_result': foret})
 
+
 def home_page(request, nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     foret = Foret.objects.get(nom_foret=nom_foret)
     description = foret.get_description()
-    return render(request, 'home_page.html', {'nom_foret':nom_foret, 'image_path':image_path,'description':description})
+    return render(request, 'home_page.html', {'nom_foret': nom_foret, 'image_path': image_path, 'description': description})
+
 
 def connexion(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
@@ -42,18 +44,20 @@ def connexion(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect('/tableau_de_bord/')  # Rediriger vers la page de tableau de bord après connexion
+            # Rediriger vers la page de tableau de bord après connexion
+            return HttpResponseRedirect('/tableau_de_bord/')
         else:
             return render(request, 'connexion.html', {'error_message': 'Nom d\'utilisateur ou mot de passe incorrect'})
     else:
-        return render(request, 'login.html',{'image_path':image_path})
+        return render(request, 'login.html', {'image_path': image_path})
 
 
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]
 
 
-def v_form_submitted(request, image_path="/forest_pic/for1.jpeg"):
+def v_form_submitted(request):
+    image_path = f"/forest_pic/{random.choice(randomImage())}"
     return render(request, 'formSubmitted.html', {'image_path': image_path})
 
 
@@ -64,8 +68,8 @@ def v_post_new_incident(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.statut_incident = "En cours"
-            post.save(using='forestDB')
-            return redirect('formSubmitted', image_path)
+            post.save()
+            return redirect('formSubmitted')
     else:
         form = PostFormIncident()
     return render(request, 'incidentForm.html', {
@@ -83,8 +87,8 @@ def v_register_new_species(request):
         form = PostFormOrganism(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.save(using='forestDB')
-            return redirect('formSubmitted', image_path)
+            post.save()
+            return redirect('formSubmitted')
     else:
         form = PostFormOrganism()
     return render(request, 'incidentForm.html', {
@@ -96,4 +100,10 @@ def v_register_new_species(request):
     })
 
 
-
+def v_list_of_species(request):
+    image_path = f"/forest_pic/{random.choice(randomImage())}"
+    return render(request, "listOfSpecies.html", {
+        'image_path': image_path,
+        'foret': "exemple",
+        'species': Organisme.objects.all()
+    })
