@@ -25,14 +25,32 @@ header {
     text-decoration: none; /* Supprime la décoration du texte */
     color: #fff; /* Couleur du texte du lien (blanc) */
     font-weight: bold; /* Texte en gras */
-    background-color: #F76D57; /* Couleur de fond du bouton */
+    background-color: #4CAF50; /* Couleur de fond du bouton */
     padding: 10px 20px; /* Espace intérieur du bouton */
     border-radius: 10px; /* Coins arrondis du bouton */
     transition: background-color 0.3s; /* Animation de couleur de fond au survol */
 }
 
 .login-link:hover {
-    background-color: #388E3C; /* Couleur de fond du bouton au survol (nouveau vert) */
+    background-color: #F76D57; /* Couleur de fond du bouton au survol (nouveau vert) */
+    color: #fff; /* Couleur du texte au survol (blanc) */
+}
+.forest-return {
+    position: fixed; /* Position fixe pour rester en haut de la page */
+    top: 20px; /* Espacement depuis le haut */
+    left: 20px; /* Espacement depuis la droite */
+    z-index: 1; /* Empile le lien au-dessus du contenu */
+    text-decoration: none; /* Supprime la décoration du texte */
+    color: #fff; /* Couleur du texte du lien (blanc) */
+    font-weight: bold; /* Texte en gras */
+    background-color: #4CAF50; /* Couleur de fond du bouton */
+    padding: 10px 20px; /* Espace intérieur du bouton */
+    border-radius: 10px; /* Coins arrondis du bouton */
+    transition: background-color 0.3s; /* Animation de couleur de fond au survol */
+}
+
+.forest-return:hover {
+    background-color: #F76D57; /* Couleur de fond du bouton au survol (nouveau vert) */
     color: #fff; /* Couleur du texte au survol (blanc) */
 }
 
@@ -70,7 +88,7 @@ section {
 .section-description {
     margin: 20px auto; /* Centre horizontalement la section de description et ajoute de l'espace en haut */
     padding: 20px; /* Augmente l'espace intérieur de la section de description */
-    max-width: 70%; /* Augmente légèrement la largeur maximale */
+    max-width: 500px; /* Augmente légèrement la largeur maximale */
     background-color: #f0f0f0; /* Nouvelle couleur de fond */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Légère ombre plus basse */
     border-radius: 12px; /* Coins arrondis un peu plus prononcés */
@@ -99,10 +117,4 @@ section a:hover {
     color:#F76D57 ; /* Couleur des liens dans les sections au survol */
 }
 
-/* Styles pour le lien "Se connecter" */
-.login-link {
-    background-color: #F76D57; /* Couleur de fond du bouton (nouvelle couleur) */
-    padding: 5px 10px; /* Espace intérieur du bouton */
-    border-radius: 10px; /* Coins arrondis */
-}
 
