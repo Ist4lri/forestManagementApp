@@ -4,8 +4,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+     <link rel="stylesheet" type="text/css" href="{% static 'oneSpecie.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo de l'organisme</title>
+    <title>{{oneSpecies}}</title>
     <style>
         img {
             max-width: 20%; /* L'image ne dépassera pas la largeur de son conteneur (l'écran) */
@@ -14,8 +15,11 @@
     </style>
 </head>
 <body>
-    <h1>Photo de l'organisme</h1>
+    <h1>{{oneSpecies}}</h1>
       <img src="{% static '/organism_pic/'|add:oneSpecies|add:'.jpg' %}" alt="Image de l'organisme">
+      <p> Mode de nutrition :</p>
+      <p>Il y en a {{nombre_organisme}} dans la {{nom_foret}}</p>
+
 
 
 </body>

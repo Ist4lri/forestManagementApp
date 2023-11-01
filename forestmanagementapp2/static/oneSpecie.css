@@ -1,0 +1,40 @@
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+  .container {
+    background-color: #ffffffb5; /* Couleur de fond du conteneur */
+    padding: 20px;
+    border-radius: 10px; /* Coins arrondis */
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
+  }
+/* Apply a background color to the body */
+body {
+    background-color: #f0f0f0; /* You can change the color to your preference */
+    font-family: 'Apple Chancery', cursive; /* Choose your preferred font family */
+}
+
+/* Style the header with a background color, text color, and padding */
+h1 {
+    background-color: #388E3C; /* Background color for the header */
+    color: #fff; /* Text color for the header */
+    padding: 10px; /* Adjust the padding as needed */
+    text-align: center; /* Center-align the text */
+}
+
+/* Style the image to have a maximum width of 100% of its container */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove any extra space below the image */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Style the paragraph text for mode of nutrition and organism count */
+p {
+    text-align: center; /* Center-align the text */
+    margin: 10px 0; /* Add space around the paragraphs */
+}

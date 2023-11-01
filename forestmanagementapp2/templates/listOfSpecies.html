@@ -14,7 +14,7 @@
         <tbody>
         {% for oneSpecie in species %}
             <tr>
-                <td><a href="{% url 'organism_info' nom_organisme=oneSpecie %}">{{ oneSpecie }}</a></td>
+                <td><a href="{% url 'organism_info' nom_organisme=oneSpecie nom_foret=foret %}">{{ oneSpecie }}</a></td>
             </tr>
         {% endfor %}
         </tbody>
