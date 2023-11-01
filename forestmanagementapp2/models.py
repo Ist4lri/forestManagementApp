@@ -12,6 +12,9 @@ class Contient(models.Model):
         managed = False
         db_table = 'CONTIENT'
 
+    def get_list_organism(self):
+        self.id_organisme
+
 
 class Foret(models.Model):
     id_foret = models.AutoField(primary_key=True)
@@ -28,6 +31,7 @@ class Foret(models.Model):
 
     def get_description(self):
         return self.description
+
 
     class Meta:
         managed = False

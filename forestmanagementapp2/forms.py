@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Incident,Organisme,Foret
+from .models import Incident,Organisme,Foret,Contient
 
 
 class PostFormIncident(forms.ModelForm):
@@ -23,3 +23,10 @@ class ForestForm(forms.ModelForm):
     class Meta:
         model = Foret
         fields = ('nom_foret','description','localisation','superficie','composition_sol','quantite_eau', 'id_foret')
+
+
+
+class OrganismForm(forms.ModelForm):
+    class Meta:
+        model=Contient
+        fields=('id_foret', 'id_organisme', 'nombre_organisme')
