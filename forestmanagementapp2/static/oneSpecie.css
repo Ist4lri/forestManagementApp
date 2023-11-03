@@ -1,54 +1,49 @@
-/* oneSpecie.css */
-
-/* Styles pour le conteneur principal */
 .container {
-    background-color: #ffffffb5; /* Couleur de fond du conteneur */
+    background-color: #ffffffb5;
     padding: 20px;
-    border-radius: 10px; /* Coins arrondis */
+    border-radius: 10px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
-    max-width: 600px; /* Ajustez la largeur selon vos besoins */
-    margin: 0 auto; /* Centre le conteneur horizontalement */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Styles pour l'en-tête de la page */
 header {
     margin-bottom: 20px;
-    background-color: #388E3C; /* Nouveau vert */
-    color: black; /* Texte en blanc pour le contraste */
-    padding: 20px; /* Espace intérieur du header */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère en dessous du header */
-    border-radius: 0 0 20px 20px; /* Arrondit les coins inférieurs du header */
-    position: relative; /* Position relative pour positionner le bouton */
-    align-items: center; /* Centrez les éléments verticalement */
+    background-color: #388E3C;
+    color: black;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    align-items: center;
 }
 
-/* Styles pour le titre de l'en-tête */
 header h1 {
     font-size: 30px;
     margin: 0;
     text-align: center;
 }
 
-/* Styles pour le lien "Retour aux espèces" (bouton) */
 .return-button {
-    background-color: #4CAF50; /* Couleur de fond du bouton */
-    color: white; /* Texte en blanc pour le contraste */
-    padding: 10px 20px; /* Espace intérieur du bouton */
-    border: none; /* Retirez la bordure */
-    border-radius: 5px; /* Coins arrondis du bouton */
-    cursor: pointer; /* Changez le curseur au survol pour indiquer que c'est un bouton */
-    text-decoration: none; /* Retirez la décoration de texte */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: url('black.png.png'), auto;
+    text-decoration: none;
 }
 
-/* Styles au survol du bouton */
 .return-button:hover {
-    background-color: #F76D57; /* Nouvelle couleur de fond au survol */
+    background-color: #F76D57;
+    cursor: url('black.png'), auto;
 }
 
-/* Styles pour le texte du paragraphe (justify) */
 .container p {
     text-align: justify;
 }
 
-/* Ajoutez d'autres styles selon vos préférences pour personnaliser davantage la page. */
+body {
+    cursor: url('white.png'), auto;
+}

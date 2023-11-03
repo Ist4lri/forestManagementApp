@@ -1,29 +1,39 @@
 {% extends "allHeadTemplated.html" %}
 {% load static %}
 {% block body %}
+
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'table.css' %}">
-    <title>Liste d'espèces de {{ foret }}</title>
+    <title>Liste d'espèces de {{ nom_foret }}</title>
+
+
 </head>
 <body>
 <div class="container">
+    <a class="home-page-return" href="{% url 'home_page' nom_foret=nom_foret %}">Retour</a>
     <table id="myTable">
         <thead>
-            <th>Voici les espèces présentes dans la {{ foret }}</th>
+            <th>Voici les espèces présentes dans la {{ nom_foret }}</th>
         </thead>
 
         <tbody>
         {% for oneSpecie in species %}
             <tr>
-                <td><a href="{% url 'organism_info' nom_organisme=oneSpecie nom_foret=foret %}">{{ oneSpecie }}</a></td>
+                <td><a href="{% url 'organism_info' nom_organisme=oneSpecie nom_foret=nom_foret %}" >{{ oneSpecie }}</a></td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
-
 <script>
     $(document).ready( function () {
         $('#myTable').DataTable();
     });
 </script>
+</body>
+</html>
 {% endblock %}

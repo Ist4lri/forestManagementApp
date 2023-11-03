@@ -3,48 +3,73 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-  }
-  
-  table {
+}
+
+.home-page-return {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: url('black.png'), auto;
+    transition: background-color 0.3s;
+}
+
+.home-page-return:hover {
+    background-color: #F76D57;
+    color: #fff;
+    cursor: url('black.png'), auto;
+}
+
+table {
     border-collapse: separate;
     border-spacing: 0;
-    width: 25%; /* Ajustez la largeur selon vos besoins */
+    width: 25%;
     text-align: center;
     background-color: transparent;
-  }
-  
-  th {
+}
+
+th {
     background-color: #176200;
     color: #fff;
     padding: 10px;
-  }
-  
-  tr:nth-child(odd) { 
+}
+
+tr:nth-child(odd) {
     background-color: #5f5f5f9d;
-  }
-  
-  tr:nth-child(even) { 
+}
+
+tr:nth-child(even) {
     background-color: #d1d1d1a6;
-  }
-  
-  td {
+}
+
+td {
     padding: 10px;
-  }
-  
-  button {
+}
+
+button {
     background-color: #176200;
     border: none;
-    cursor: pointer;
+    cursor: url('black.png'), auto;
     padding: 10px;
     width: 100%;
     text-align: center;
     text-decoration: none;
     display: block;
-    margin:0 auto;
+    margin: 0 auto;
     color: #fff;
     transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #1a7f00; /* Couleur légèrement plus claire au survol */
-  }
+}
+
+button:hover {
+    background-color: #1a7f00;
+}
+
+body {
+    cursor: url('white.png'), auto;
+}
