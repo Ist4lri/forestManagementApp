@@ -1,0 +1,33 @@
+{% extends "allHeadTemplated.html" %}
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home_page.css' %}">
+<title>Gestionnaire de forêt</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur notre gestionnaire de forêt !</h1>
+        <a class="login-link" href="{% url 'connexion' %}">Se connecter</a>
+    </header>
+
+    <section class="section-description">
+        <h2>Que fait ce gestionnaire ?</h2>
+        <p>
+            Ce gestionnaire a deux objectifs bien distinct : Le premier est d'informer et de renseigner 
+            les différentes espèces d'animaux, et de végétaux présentes dans les forêt pour tous randonneurs, campeurs,
+            chercheurs, bref, toutes personnes ayant besoin de se renseigner sur les espèces présentes dans une forêt donnée.
+            Le deuxième objectif est de recenser, classer des incidents de forêts, pour ensuite les dispatcher entre les
+            différentes garde forêts présent sur les sites. Ces derniers auront une liste de missions à effectuer, et un 
+            recensement de missions déjà effectuée, et une date sera également attachée à ces missions.
+            
+            Ce gestionnaire ne propose pas d'espace client, car pour le moment, cela ne répondait pas à un besoin. Il n'est cependant pas
+            impossible que les besoins évoluent et qu'un espace client soit développé dans l'avenir.
+        </p>
+    </section>
+
+    <section class="section-description">
+        <h2>Pourquoi avoir fait ce gestionnaire ?</h2>
+        <p>
+            
+        </p>
+    </section>
