@@ -14,18 +14,13 @@ def enter_forest(request):
 
     if request.method == 'POST':
         form = ForestForm(request.POST)
-        print("ok")
         if form.is_valid():
-            print("ok")
             foretclean = form.cleaned_data['nom_foret']
-            print(foretclean)
             try:
                 foret = Foret.objects.get(nom_foret=foretclean)
-                print(foret)
                 return redirect('home_page', nom_foret=foret)
             except Foret.DoesNotExist:
                 foret = None
-                print(foret)
     else:
         form = ForestForm()
     return render(request, 'enter_forest.html', {'foret': form, 'forets': forets, 'image_path': image_path, 'foret_result': foret})
