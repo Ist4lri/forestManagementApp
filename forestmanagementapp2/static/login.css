@@ -1,4 +1,3 @@
-/* Styles pour la page de connexion */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
@@ -6,7 +5,7 @@ body {
 }
 
 h1 {
-    color: #388E3C; /* Couleur du titre */
+    color: #388E3C;
 }
 
 form {
@@ -37,14 +36,19 @@ input[type="password"] {
 input[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #388E3C; /* Couleur du bouton */
+    background-color: #388E3C;
     color: #fff;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: url('black.png'), auto;
     transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover {
-    background-color: #176200; /* Couleur au survol */
+    background-color: #176200;
+    cursor: url('black.png'), auto;
+}
+
+body {
+    cursor: url('white.png'), auto;
 }

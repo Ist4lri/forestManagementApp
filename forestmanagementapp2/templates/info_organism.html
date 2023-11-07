@@ -1,23 +1,31 @@
+
 {% extends "allHeadTemplated.html" %}
 {% block body %}
 {% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'oneSpecie.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo de l'organisme</title>
+    <title>{{oneSpecies}}</title>
     <style>
         img {
-            max-width: 20%; /* L'image ne dépassera pas la largeur de son conteneur (l'écran) */
+            max-width: 40%; /* L'image ne dépassera pas la largeur de son conteneur (l'écran) */
             height: auto; /* La hauteur est automatiquement calculée pour conserver les proportions */
         }
     </style>
 </head>
 <body>
-    <h1>Photo de l'organisme</h1>
-      <img src="{% static '/organism_pic/'|add:oneSpecies|add:'.jpg' %}" alt="Image de l'organisme">
-
-
+    <header>
+        <a href="{%  url 'list_species' nom_foret=nom_foret  %}" class="return-button">Retour aux espèces</a>
+        <h1>{{oneSpecies}}</h1>
+    </header>
+    <div class="container">
+        <div class="image-description">
+            <img src="{% static '/organism_pic/'|add:oneSpecies|add:'.jpg' %}" alt="Image de l'organisme">
+            <p>{{description}}</p>
+        </div>
+    </div>
 </body>
 </html>
 {% endblock %}

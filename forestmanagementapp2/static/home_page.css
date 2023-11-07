@@ -1,108 +1,125 @@
-/* Styles pour la page d'accueil de la forêt */
 body {
-    font-family: 'Apple Chancery', cursive; /* Police de caractères pour le texte du corps */
-    margin: 0; /* Supprime les marges extérieures */
-    padding: 0; /* Supprime le rembourrage extérieur */
-    background-color: #f0f0f0; /* Couleur de fond de la page */
+    font-family: 'Apple Chancery', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
 }
 
 header {
-    background-color: #388E3C; /* Nouveau vert */
-    color: black; /* Texte en blanc pour le contraste */
-    padding: 20px; /* Espace intérieur du header */
-    text-align: center; /* Centre le contenu du header horizontalement */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère en dessous du header */
-    border-radius: 0 0 20px 20px; /* Arrondit les coins inférieurs du header */
+    background-color: #388E3C;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 20px 20px;
 }
 
-
-/* Lien pour se connecter */
 .login-link {
-    position: fixed; /* Position fixe pour rester en haut de la page */
-    top: 20px; /* Espacement depuis le haut */
-    right: 20px; /* Espacement depuis la droite */
-    z-index: 1; /* Empile le lien au-dessus du contenu */
-    text-decoration: none; /* Supprime la décoration du texte */
-    color: #fff; /* Couleur du texte du lien (blanc) */
-    font-weight: bold; /* Texte en gras */
-    background-color: #F76D57; /* Couleur de fond du bouton */
-    padding: 10px 20px; /* Espace intérieur du bouton */
-    border-radius: 10px; /* Coins arrondis du bouton */
-    transition: background-color 0.3s; /* Animation de couleur de fond au survol */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: url('black.png'), auto;
+    transition: background-color 0.3s;
 }
 
 .login-link:hover {
-    background-color: #388E3C; /* Couleur de fond du bouton au survol (nouveau vert) */
-    color: #fff; /* Couleur du texte au survol (blanc) */
+    background-color: #F76D57;
+    color: #fff;
+    cursor: url('black.png'), auto;
+}
+
+.forest-return {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    cursor: url('black.png'), auto;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.forest-return:hover {
+    background-color: #F76D57;
+    color: #fff;
+    cursor: url('black.png'), auto;
 }
 
 nav ul {
-    list-style: none; /* Supprime les puces de la liste de navigation */
-    padding: 0; /* Supprime le rembourrage de la liste de navigation */
+    list-style: none;
+    padding: 0;
 }
 
 nav li {
-    display: inline; /* Affiche les éléments de liste horizontalement */
-    margin-right: 20px; /* Espace entre les éléments de liste */
+    display: inline;
+    margin-right: 20px;
 }
 
 nav a {
-    text-decoration: none; /* Supprime la décoration des liens de navigation */
-    color: #fff; /* Couleur du texte des liens de navigation (blanc) */
-    font-weight: bold; /* Texte en gras */
-    text-transform: uppercase; /* Texte en majuscules */
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 nav a:hover {
-    color: #ffcc00; /* Couleur des liens de navigation au survol */
+    color: #ffcc00;
 }
 
-/* Styles pour les sections */
 section {
-    margin: 10px 0; /* Ajoute de l'espace en haut et en bas de chaque section */
-    padding: 10px; /* Espace intérieur des sections */
-    background-color: rgba(255, 255, 255, 0.6); /* Couleur de fond légèrement transparente */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Ombre légère */
-    border-radius: 9px; /* Coins arrondis */
-    border: 1px solid #ccc; /* Bordure légère */
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 9px;
+    border: 1px solid #ccc;
 }
 
 .section-description {
-    margin: 20px auto; /* Centre horizontalement la section de description et ajoute de l'espace en haut */
-    padding: 20px; /* Augmente l'espace intérieur de la section de description */
-    max-width: 70%; /* Augmente légèrement la largeur maximale */
-    background-color: #f0f0f0; /* Nouvelle couleur de fond */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Légère ombre plus basse */
-    border-radius: 12px; /* Coins arrondis un peu plus prononcés */
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 500px;
+    background-color: #f0f0f0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
 }
 
 section h2 {
-    font-size: 1.5rem; /* Taille de police pour les titres de section */
-    margin-bottom: 10px; /* Espace en bas des titres de section */
-    border-bottom: 2px solid #388E3C; /* Bordure inférieure (nouveau vert) */
-    padding-bottom: 5px; /* Espace sous les titres de section */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #388E3C;
+    padding-bottom: 5px;
 }
 
 section p {
-    color: black; /* Couleur du texte de paragraphe par défaut */
-    font-weight: normal; /* Texte normal (non gras) */
-    line-height: 1.5; /* Hauteur de ligne pour les paragraphes */
+    color: black;
+    font-weight: normal;
+    line-height: 1.5;
 }
 
 section a {
-    text-decoration: none; /* Supprime la décoration des liens dans les sections */
-    color: #388E3C; /* Couleur des liens dans les sections (nouveau vert) */
-    font-weight: bold; /* Texte en gras pour les liens */
+    text-decoration: none;
+    color: #388E3C;
+    font-weight: bold;
+    cursor: url('black.png'), auto;
 }
 
 section a:hover {
-    color:#F76D57 ; /* Couleur des liens dans les sections au survol */
+    color: #F76D57;
+    cursor: url('black.png'), auto;
 }
 
-/* Styles pour le lien "Se connecter" */
-.login-link {
-    background-color: #F76D57; /* Couleur de fond du bouton (nouvelle couleur) */
-    padding: 5px 10px; /* Espace intérieur du bouton */
-    border-radius: 10px; /* Coins arrondis */
+body {
+    cursor: url('white.png'), auto;
 }
-
