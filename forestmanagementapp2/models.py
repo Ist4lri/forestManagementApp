@@ -1,4 +1,4 @@
-from django.db import migrations, models
+from django.db import models
 
 
 class Contient(models.Model):
