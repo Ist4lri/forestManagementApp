@@ -24,6 +24,7 @@ select {
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
+    cursor: url('black.png'), auto;
 }
 
 button {

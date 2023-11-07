@@ -52,22 +52,25 @@ td {
     padding: 10px;
 }
 
-button {
-    background-color: #176200;
-    border: none;
-    cursor: url('black.png'), auto;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    margin: 0 auto;
-    color: #fff;
-    transition: background-color 0.3s;
+.button-link {
+  background-color: #176200;
+  border: none;
+  cursor: url('black.png'), auto;
+  padding: 10px;
+  width: 90%;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  transition: background-color 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
-button:hover {
-    background-color: #1a7f00;
+.button-link:hover {
+  background-color: #1a7f00;
 }
 
 html {
