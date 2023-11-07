@@ -46,6 +46,6 @@ p {
     color: #555;
 }
 
-body {
-    cursor: url('white.png'), auto;
+html {
+    cursor: url('white.png'), pointer;
 }

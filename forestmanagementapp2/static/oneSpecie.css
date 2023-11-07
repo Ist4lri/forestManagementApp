@@ -44,6 +44,6 @@ header h1 {
     text-align: justify;
 }
 
-body {
+html {
     cursor: url('white.png'), auto;
 }

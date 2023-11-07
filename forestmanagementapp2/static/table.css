@@ -70,6 +70,6 @@ button:hover {
     background-color: #1a7f00;
 }
 
-body {
+html {
     cursor: url('white.png'), auto;
 }

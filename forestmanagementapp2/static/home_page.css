@@ -120,6 +120,6 @@ section a:hover {
     cursor: url('black.png'), auto;
 }
 
-body {
+html {
     cursor: url('white.png'), auto;
 }
