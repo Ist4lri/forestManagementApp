@@ -7,7 +7,10 @@
 <body>
     <header>
         <h1>Bienvenue sur notre gestionnaire de forêt !</h1>
-        <a class="login-link" href="{% url 'connexion' %}">Se connecter</a>
+        <a class="login-link" href="{% url 'connexion' %}">
+            <img src="{% static 'Login_logos/Logo_off.png' %}">
+            <img src="{% static 'Login_logos/Logo_on.png' %}" title="Se connecter" class="hidden">
+        </a>
     </header>
 
     <section class="section-description">

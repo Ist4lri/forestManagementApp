@@ -9,7 +9,10 @@
 
         <h1>{{ nom_foret }}</h1>
         <a class="forest-return" href="{% url 'enter_forest' %}">Changer de foret</a>
-        <a class="login-link" href="{% url 'connexion' %}">Se connecter</a>
+        <a class="login-link" href="{% url 'connexion' %}">
+            <img src="{% static 'Login_logos/Logo_off.png' %}">
+            <img src="{% static 'Login_logos/Logo_on.png' %}" title="Se connecter" class="hidden">
+        </a>
     </header>
 
     <section class="forest-description">
