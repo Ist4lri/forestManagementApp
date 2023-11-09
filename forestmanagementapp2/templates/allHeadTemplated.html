@@ -1,9 +1,10 @@
 {% load static %}
-
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static  'formStyle.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static  'allPageStyle.css' %}">
     <style>
         body {
             background-image: url("{% static image_path %}");
@@ -16,4 +17,7 @@
 {% block body %}
 {% endblock %}
 </body>
+<footer>
+    <p>&copy;2023 - Programmation web:complément - M2 DLAD - GOUTTEBEL Pierre-Loïc and MONIER Maëlle</p>
+</footer>
 </html>

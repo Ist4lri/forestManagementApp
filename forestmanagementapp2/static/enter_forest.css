@@ -24,6 +24,7 @@ select {
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
+    cursor: url('black.png'), auto;
 }
 
 button {
@@ -46,6 +47,6 @@ p {
     color: #555;
 }
 
-body {
-    cursor: url('white.png'), auto;
+html {
+    cursor: url('white.png'), pointer;
 }

@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #388E3C;
+    background-color: #2a6c2d;
     color: black;
     padding: 20px;
     text-align: center;
@@ -15,23 +15,31 @@ header {
 }
 
 .login-link {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    background-color: #4CAF50;
-    padding: 10px 20px;
-    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    right: 5px;
     cursor: url('black.png'), auto;
-    transition: background-color 0.3s;
+}
+
+img {
+    max-width: 100px;
+    height: 100px;
+    display: block;
+}
+
+.login-link:hover img:first-child {
+    display: none;
+}
+
+.login-link:hover img:last-child {
+    display: block;
+}
+
+.hidden {
+    display: none;
 }
 
 .login-link:hover {
-    background-color: #F76D57;
-    color: #fff;
     cursor: url('black.png'), auto;
 }
 
@@ -86,10 +94,19 @@ section {
     border: 1px solid #ccc;
 }
 
-.section-description {
+.forest-description {
     margin: 20px auto;
     padding: 20px;
     max-width: 500px;
+    background-color: #f0f0f0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+.section-description {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 55%;
     background-color: #f0f0f0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
@@ -120,6 +137,6 @@ section a:hover {
     cursor: url('black.png'), auto;
 }
 
-body {
+html {
     cursor: url('white.png'), auto;
 }

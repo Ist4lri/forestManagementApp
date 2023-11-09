@@ -23,7 +23,7 @@
         <tbody>
         {% for oneSpecie in species %}
             <tr>
-                <td><a href="{% url 'organism_info' nom_organisme=oneSpecie nom_foret=nom_foret %}" >{{ oneSpecie }}</a></td>
+                <td><a class="button-link" href="{% url 'organism_info' nom_organisme=oneSpecie nom_foret=nom_foret %}" >{{ oneSpecie }}</a></td>
             </tr>
         {% endfor %}
         </tbody>
@@ -34,6 +34,4 @@
         $('#myTable').DataTable();
     });
 </script>
-</body>
-</html>
 {% endblock %}

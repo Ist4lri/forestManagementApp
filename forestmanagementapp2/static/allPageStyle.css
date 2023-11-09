@@ -58,7 +58,6 @@ form button {
     color: #fff;
     border: none;
     border-radius: 5px;
-    cursor: url('black.png'), auto;
 }
 
 button {
@@ -68,7 +67,6 @@ button {
     color: #fff;
     border: none;
     border-radius: 5px;
-    cursor: url('black.png'), auto;
 }
 
 form button[type="submit"]:hover {
@@ -91,6 +89,16 @@ button:hover {
     font-size: 14px;
 }
 
-body {
+html {
+    cursor: url('white.png'), auto;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: rgba(128, 128, 128, 0.5);
+    text-align: center;
     cursor: url('white.png'), auto;
 }
