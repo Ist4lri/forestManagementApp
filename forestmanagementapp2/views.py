@@ -7,6 +7,11 @@ from django.http import HttpResponseRedirect
 from .models import Foret, Organisme, Contient
 
 
+def home(request):
+    image_path = f"/forest_pic/{random.choice(randomImage())}"
+    return render(request, 'homePage.html', {'image_path': image_path})
+
+
 def enter_forest(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     forets = Foret.objects.all()
@@ -30,7 +35,7 @@ def home_page(request, nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     foret = Foret.objects.get(nom_foret=nom_foret)
     description = foret.get_description()
-    return render(request, 'home_page.html', {'nom_foret': nom_foret, 'image_path': image_path, 'description': description})
+    return render(request, 'oneForestSelected.html', {'nom_foret': nom_foret, 'image_path': image_path, 'description': description})
 
 
 def connexion(request):

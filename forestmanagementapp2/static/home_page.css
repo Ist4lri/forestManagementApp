@@ -86,10 +86,19 @@ section {
     border: 1px solid #ccc;
 }
 
-.section-description {
+.forest-description {
     margin: 20px auto;
     padding: 20px;
     max-width: 500px;
+    background-color: #f0f0f0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+.section-description {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 55%;
     background-color: #f0f0f0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
