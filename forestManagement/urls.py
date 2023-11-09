@@ -32,4 +32,6 @@ urlpatterns = [
     path('listOfSpecies/<str:nom_foret>/info_org/<str:nom_organisme>/', organism_info, name='organism_info'),
     path('', home, name='home')
 
+
+
 ]
