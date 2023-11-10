@@ -1,0 +1,92 @@
+/* CSS pour la mise en page du diaporama */
+.slideshow-container {
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto; /* Cette ligne permet de centrer horizontalement le diaporama */
+    margin-top: 100px;
+}
+
+.mySlides {
+    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* Ajustez la hauteur de la diapositive selon vos besoins */
+    transition: transform 1s ease-in-out;
+}
+
+img {
+    max-width: 100%;
+    height: auto; /* Assurez-vous que l'image conserve ses proportions */
+    max-height: 100%; /* Ajustez la hauteur maximale selon vos besoins */
+    object-fit: cover; /* Ajuste l'image pour remplir le conteneur sans déformation */
+}
+
+
+.fade {
+    animation: fade 4s ease-in-out infinite; /* Augmentation de la durée de l'animation et ajout d'une transition en douceur */
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Styles pour le bouton de retour à la page d'accueil */
+.home-page-return {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: url('black.png'), auto;
+    transition: background-color 0.3s;
+}
+
+.home-page-return:hover {
+    background-color: #F76D57;
+    cursor: url('black.png'), auto;
+    color: #fff;
+
+}
+
+/* Styles pour l'en-tête */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #388E3C;
+    color: #fff; /* Modification de la couleur du texte en blanc */
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 20px 20px;
+    z-index: 100; /* Pour s'assurer que l'en-tête est au-dessus du reste du contenu */
+}
+
+header h1 {
+    font-size: 36px; /* Augmentation de la taille de la police */
+    margin: 0;
+    text-align: center;
+}
+
+/* Styles pour le corps de la page */
+body {
+    margin-top: 100px; /* Ajustement de la marge supérieure */
+    text-align: center;
+}

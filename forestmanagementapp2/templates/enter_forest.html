@@ -7,6 +7,15 @@
     <title>Choix d'une forêt</title>
 </head>
 <body>
+  <header>
+        <h1>Bienvenue sur notre gestionnaire d'écosystèmes forestiers !</h1>
+            <a class="home-page-return" href="{% url 'home' %}" title="Retour à la présentation" >Retour</a>
+            <a class="login-link" href="{% url 'connexion' %}">
+            <img src="{% static 'Login_logos/Logo_off.png' %}">
+            <img src="{% static 'Login_logos/Logo_on.png' %}" title="Se connecter" class="hidden">
+
+        </a>
+    </header>
     <form method="post" action="{% url 'enter_forest' %}">
         {% csrf_token %}
         <h1>Quelle forêt souhaitez-vous découvrir ?</h1>

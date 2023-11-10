@@ -5,6 +5,8 @@ from .forms import PostFormIncident, PostFormOrganism, ForestForm, OrganismForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
 from .models import Foret, Organisme, Contient
+from django.conf import settings
+
 
 
 def home(request):
@@ -136,3 +138,8 @@ def v_list_of_species(request, nom_foret):
         'species':list_organismes
     })
 
+def pictures(request, nom_foret):
+    image_list=os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), f"static/{nom_foret}"))
+
+    print('image_list:',image_list)
+    return render(request, 'Pictures.html', {'image_list': image_list, 'nom_foret': nom_foret})
