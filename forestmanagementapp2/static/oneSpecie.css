@@ -39,7 +39,7 @@ header h1 {
 }
 
 .return-button:hover {
-    background-color: #F76D57;
+    background-color: #a2695d;
     cursor: url('black.png'), auto;
 }
 
@@ -52,7 +52,7 @@ html {
     cursor: url('white.png'), auto;
 }
 .container .species-count {
-    background: #F76D57;
+    background: #a2695d;
     color: black;
     padding: 20px 5px;
     border-radius: 5px;

@@ -59,7 +59,7 @@ img {
 }
 
 .forest-return:hover {
-    background-color: #F76D57;
+    background-color: #a2695d;
     color: #fff;
     cursor: url('black.png'), auto;
 }
@@ -82,7 +82,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffcc00;
+    color: #a2695d ;
 }
 
 section {
@@ -98,7 +98,7 @@ section {
     margin: 20px auto;
     padding: 20px;
     max-width: 500px;
-    background-color: rgba(247, 109, 87, 0.7); /* Arrière-plan semi-transparent */
+    background-color: rgb(162, 105,93, 0.7); /* Arrière-plan semi-transparent */
     border: none; /* Supprime la bordure */
 }
 
@@ -108,7 +108,7 @@ section {
     margin: 20px auto;
     padding: 20px;
     max-width: 55%;
-    background-color: #f0f0f0;
+    background-color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
 }
@@ -134,7 +134,7 @@ section a {
 }
 
 section a:hover {
-    color: #F76D57;
+    color: #a2695d;
     cursor: url('black.png'), auto;
 }
 
@@ -158,7 +158,7 @@ html {
 }
 
 .enter-forest:hover {
-    background-color: #F76D57;
+    background-color: #a2695d;
     cursor: url('black.png'), auto;
     color: #fff;
 
