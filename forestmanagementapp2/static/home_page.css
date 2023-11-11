@@ -141,3 +141,25 @@ section a:hover {
 html {
     cursor: url('white.png'), auto;
 }
+
+.enter-forest {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: url('black.png'), auto;
+    transition: background-color 0.3s;
+}
+
+.enter-forest:hover {
+    background-color: #F76D57;
+    cursor: url('black.png'), auto;
+    color: #fff;
+
+}

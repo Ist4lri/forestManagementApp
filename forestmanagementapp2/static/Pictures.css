@@ -1,8 +1,7 @@
-/* CSS pour la mise en page du diaporama */
 .slideshow-container {
     max-width: 100%;
     overflow: hidden;
-    margin: 0 auto; /* Cette ligne permet de centrer horizontalement le diaporama */
+    margin: 0 auto;
     margin-top: 100px;
 }
 
@@ -11,20 +10,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px; /* Ajustez la hauteur de la diapositive selon vos besoins */
+    height: 500px;
     transition: transform 1s ease-in-out;
 }
 
 img {
     max-width: 100%;
-    height: auto; /* Assurez-vous que l'image conserve ses proportions */
-    max-height: 100%; /* Ajustez la hauteur maximale selon vos besoins */
-    object-fit: cover; /* Ajuste l'image pour remplir le conteneur sans déformation */
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
 }
 
-
 .fade {
-    animation: fade 4s ease-in-out infinite; /* Augmentation de la durée de l'animation et ajout d'une transition en douceur */
+    animation: fade 4s ease-in-out infinite;
 }
 
 @keyframes fade {
@@ -57,13 +55,11 @@ img {
     transition: background-color 0.3s;
 }
 
-.home-page-return:hover {
+home-page-return:hover {
     background-color: #F76D57;
     cursor: url('black.png'), auto;
     color: #fff;
-
 }
-
 
 header {
     position: fixed;
@@ -71,11 +67,11 @@ header {
     left: 0;
     width: 100%;
     background-color: #388E3C;
-    color: #fff; /* Modification de la couleur du texte en blanc */
+    color: #fff;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 20px 20px;
-    z-index: 100; /* Pour s'assurer que l'en-tête est au-dessus du reste du contenu */
+    z-index: 100;
 }
 
 header h1 {
@@ -84,9 +80,12 @@ header h1 {
     text-align: center;
 }
 
-/* Styles pour le corps de la page */
 body {
     margin-top: 150px;
     text-align: center;
+}
 
+img {
+    max-width: 60%;
+    height: auto;
 }

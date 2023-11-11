@@ -7,17 +7,21 @@
 <body>
     <header>
         <h1>Bienvenue sur notre gestionnaire d'écosystèmes forestiers !</h1>
+        <a href="{%  url 'enter_forest'  %}" class="enter-forest">C'est parti ! </a>
+
         <a class="login-link" href="{% url 'connexion' %}">
 
             <img src="{% static 'Login_logos/Logo_off.png' %}">
             <img src="{% static 'Login_logos/Logo_on.png' %}" title="Se connecter" class="hidden">
+            <a href="{%  url 'enter_forest'  %}" class="enter-forest">C'est parti ! </a>
         </a>
     </header>
+    <a href="{%  url 'enter_forest'  %}" class="enter-forest">C'est parti ! </a>
 
     <section class="section-description">
         <h2>Que fait ce gestionnaire ?</h2>
         <p>
-            Ce gestionnaire a deux objectifs bien distinct : Le premier est d'informer et de renseigner 
+            Ce gestionnaire a deux objectifs bien distincts : le premier est d'informer et de renseigner
             les différentes espèces d'animaux ainsi que de végétaux présentes dans les forêts pour tous randonneurs, campeurs,
             chercheurs ...
             Le deuxième objectif est de recenser, classer des incidents qui peuvent survenir, tels que des incivilités, des feux etc.
