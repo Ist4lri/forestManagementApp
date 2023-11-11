@@ -106,12 +106,20 @@ def v_register_new_species(request):
 
 def organism_info(request,nom_organisme,nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
-    organisme=Organisme.objects.filter(nom_organisme=nom_organisme)
-    organisme=list(organisme)
-    description=organisme[0].description
-    id_organisme=organisme[0].id_organisme
+    organisme=Organisme.objects.filter(nom_organisme=nom_organisme).first()
+    nutrition=organisme.nutrition
+    description=organisme.description
+    id_organisme=organisme.id_organisme
+    foret = Foret.objects.filter(nom_foret=nom_foret).first()
 
-    return render(request, 'info_organism.html', {'image_path': image_path, 'oneSpecies':nom_organisme, 'nom_foret':nom_foret, 'description':description})
+    id_foret=foret.id_foret
+    contient_entry = Contient.objects.filter(id_foret=id_foret, id_organisme=id_organisme).first()
+
+    nombre_organisme = contient_entry.nombre_organisme
+
+
+
+    return render(request, 'info_organism.html', {'image_path': image_path, 'oneSpecies':nom_organisme, 'nom_foret':nom_foret, 'description':description, 'nombre_organisme':nombre_organisme, 'nutrition': nutrition})
 
 
 def v_list_of_species(request, nom_foret):

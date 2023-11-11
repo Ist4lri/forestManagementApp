@@ -98,10 +98,11 @@ section {
     margin: 20px auto;
     padding: 20px;
     max-width: 500px;
-    background-color: #f0f0f0;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
+    background-color: rgba(247, 109, 87, 0.7); /* Arrière-plan semi-transparent */
+    border: none; /* Supprime la bordure */
 }
+
+
 
 .section-description {
     margin: 20px auto;

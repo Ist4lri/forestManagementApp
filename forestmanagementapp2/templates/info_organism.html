@@ -10,7 +10,7 @@
     <title>{{oneSpecies}}</title>
     <style>
         img {
-            max-width: 40%; /* L'image ne dépassera pas la largeur de son conteneur (l'écran) */
+            max-width: 50%; /* L'image ne dépassera pas la largeur de son conteneur (l'écran) */
             height: auto; /* La hauteur est automatiquement calculée pour conserver les proportions */
         }
     </style>
@@ -18,12 +18,20 @@
 <body>
     <header>
         <a href="{%  url 'list_species' nom_foret=nom_foret  %}" class="return-button">Retour aux espèces</a>
-        <h1>{{oneSpecies}}</h1>
     </header>
     <div class="container">
         <div class="image-description">
             <img src="{% static '/organism_pic/'|add:oneSpecies|add:'.jpg' %}" alt="Image de l'organisme">
+
+            <h1>{{oneSpecies}}</h1>
+            <h2>{{nutrition}}</h2>
             <p>{{description}}</p>
+           <div class="species-count">
+               Il existe {{nombre_organisme}} espèces de {{oneSpecies}} dans la {{nom_foret}} au dernier recensement. </span>
+            </div>
+
+
         </div>
     </div>
+</body>
 {% endblock %}

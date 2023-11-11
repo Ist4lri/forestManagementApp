@@ -6,17 +6,20 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     margin: 0 auto;
+    margin-top:120px;
 }
 
 header {
-    margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #388E3C;
-    color: black;
+    color: #fff; /* Modification de la couleur du texte en blanc */
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 20px 20px;
-    position: relative;
-    align-items: center;
+    z-index: 100; /* Pour s'assurer que l'en-tête est au-dessus du reste du contenu */
 }
 
 header h1 {
@@ -41,9 +44,22 @@ header h1 {
 }
 
 .container p {
+    margin-top: 30px;
     text-align: justify;
 }
 
 html {
     cursor: url('white.png'), auto;
 }
+.container .species-count {
+    background: #F76D57;
+    color: black;
+    padding: 20px 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 60px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+

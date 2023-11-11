@@ -42,7 +42,6 @@ img {
     }
 }
 
-/* Styles pour le bouton de retour à la page d'accueil */
 .home-page-return {
     position: fixed;
     top: 20px;
@@ -65,7 +64,7 @@ img {
 
 }
 
-/* Styles pour l'en-tête */
+
 header {
     position: fixed;
     top: 0;
