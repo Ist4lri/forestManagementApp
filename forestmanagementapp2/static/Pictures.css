@@ -79,13 +79,14 @@ header {
 }
 
 header h1 {
-    font-size: 36px; /* Augmentation de la taille de la police */
+    font-size: 30px;
     margin: 0;
     text-align: center;
 }
 
 /* Styles pour le corps de la page */
 body {
-    margin-top: 100px; /* Ajustement de la marge supérieure */
+    margin-top: 150px;
     text-align: center;
+
 }
