@@ -30,7 +30,12 @@ def enter_forest(request):
                 foret = None
     else:
         form = ForestForm()
-    return render(request, 'enter_forest.html', {'foret': form, 'forets': forets, 'image_path': image_path, 'foret_result': foret})
+    return render(request, 'enter_forest.html', {
+        'foret': form, 
+        'forets': forets, 
+        'image_path': image_path, 
+        'foret_result': foret
+        })
 
 
 def home_page(request, nom_foret):
@@ -119,7 +124,14 @@ def organism_info(request,nom_organisme,nom_foret):
 
 
 
-    return render(request, 'info_organism.html', {'image_path': image_path, 'oneSpecies':nom_organisme, 'nom_foret':nom_foret, 'description':description, 'nombre_organisme':nombre_organisme, 'nutrition': nutrition})
+    return render(request, 'info_organism.html', {
+        'image_path': image_path, 
+        'oneSpecies':nom_organisme, 
+        'nom_foret':nom_foret, 
+        'description':description, 
+        'nombre_organisme':nombre_organisme, 
+        'nutrition': nutrition
+    })
 
 
 def v_list_of_species(request, nom_foret):
@@ -148,6 +160,7 @@ def v_list_of_species(request, nom_foret):
 
 def pictures(request, nom_foret):
     image_list=os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), f"static/{nom_foret}"))
-
-    print('image_list:',image_list)
-    return render(request, 'Pictures.html', {'image_list': image_list, 'nom_foret': nom_foret})
+    return render(request, 'Pictures.html', {
+        'image_list': image_list, 
+        'nom_foret': nom_foret
+    })
