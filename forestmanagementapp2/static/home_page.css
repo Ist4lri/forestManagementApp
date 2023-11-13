@@ -1,5 +1,5 @@
 body {
-    font-family: 'Apple Chancery', cursive;
+
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
@@ -59,7 +59,7 @@ img {
 }
 
 .forest-return:hover {
-    background-color: #F76D57;
+    background-color: #a2695d;
     color: #fff;
     cursor: url('black.png'), auto;
 }
@@ -82,7 +82,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffcc00;
+    color: #a2695d ;
 }
 
 section {
@@ -98,16 +98,17 @@ section {
     margin: 20px auto;
     padding: 20px;
     max-width: 500px;
-    background-color: #f0f0f0;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
+    background-color: rgb(162, 105,93, 0.7); /* Arrière-plan semi-transparent */
+    border: none; /* Supprime la bordure */
 }
+
+
 
 .section-description {
     margin: 20px auto;
     padding: 20px;
     max-width: 55%;
-    background-color: #f0f0f0;
+    background-color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
 }
@@ -133,10 +134,32 @@ section a {
 }
 
 section a:hover {
-    color: #F76D57;
+    color: #a2695d;
     cursor: url('black.png'), auto;
 }
 
 html {
     cursor: url('white.png'), auto;
+}
+
+.enter-forest {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: url('black.png'), auto;
+    transition: background-color 0.3s;
+}
+
+.enter-forest:hover {
+    background-color: #a2695d;
+    cursor: url('black.png'), auto;
+    color: #fff;
+
 }

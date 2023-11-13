@@ -21,7 +21,7 @@
 }
 
 .home-page-return:hover {
-    background-color: #F76D57;
+    background-color: #a2695d;
     color: #fff;
     cursor: url('black.png'), auto;
 }
@@ -70,7 +70,7 @@ td {
 }
 
 .button-link:hover {
-  background-color: #1a7f00;
+  background-color: #a2695d;
 }
 
 html {

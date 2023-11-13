@@ -1,0 +1,28 @@
+/* CSS pour la mise en page du diaporama */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.mySlides {
+    display: none;
+}
+
+img {
+    width: 100%;
+}
+
+/* CSS pour le défilement des images */
+.fade {
+    animation: fade 3s linear infinite;
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+}

@@ -8,7 +8,7 @@
     <header>
 
         <h1>{{ nom_foret }}</h1>
-        <a class="forest-return" href="{% url 'enter_forest' %}">Changer de foret</a>
+        <a class="forest-return" href="{% url 'enter_forest' %}" title="Choisir une autre forêt">Changer de foret</a>
         <a class="login-link" href="{% url 'connexion' %}">
             <img src="{% static 'Login_logos/Logo_off.png' %}">
             <img src="{% static 'Login_logos/Logo_on.png' %}" title="Se connecter" class="hidden">
@@ -21,8 +21,8 @@
     </section>
 
     <section id="photos">
-        <h2><a href="#photos">Photos</a></h2>
-        <!-- Contenu pour la section "Photos" -->
+        <h2><a href="{% url 'pictures' nom_foret=nom_foret %}">Photos</a></h2>
+
     </section>
 
     <section id="organismes">
@@ -32,6 +32,6 @@
 
     <section id="signaler-incident">
         <h2><a href="{% url 'incident_form' %}">Signaler un Incident</a></h2>
-        <!-- Formulaire pour signaler un incident -->
+
     </section>
 {% endblock %}
