@@ -1,8 +1,12 @@
 from django.db import models
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 from django.contrib.auth.models import AbstractUser
 >>>>>>> 1187063 (new pic)
+=======
+
+>>>>>>> 11793b8 (try to do connexion view)
 
 class Contient(models.Model):
     id_foret = models.OneToOneField(
@@ -139,3 +143,7 @@ class AuthUser(models.Model):
     class Meta:
         managed = False
         db_table = 'auth_user'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 11793b8 (try to do connexion view)

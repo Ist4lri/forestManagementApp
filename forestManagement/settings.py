@@ -126,8 +126,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 
 LOGIN_REDIRECT_URL = 'home'
 
 
 AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend']
+=======
+>>>>>>> 11793b8 (try to do connexion view)
