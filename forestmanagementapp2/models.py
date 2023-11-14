@@ -117,6 +117,12 @@ class Touche(models.Model):
     class Meta:
         managed = False
         db_table = 'TOUCHE'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5cda6a3 (login)
 
 class AuthUser(models.Model):
     password = models.CharField(max_length=128)
@@ -133,3 +139,10 @@ class AuthUser(models.Model):
     class Meta:
         managed = False
         db_table = 'auth_user'
+<<<<<<< HEAD
+=======
+
+>>>>>>> f490680 (try to do connexion view)
+=======
+>>>>>>> f485d44 (login)
+>>>>>>> 5cda6a3 (login)
