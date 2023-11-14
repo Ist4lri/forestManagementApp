@@ -59,6 +59,12 @@ def connexion(request):
             return redirect('home')
         else:
             return render(request, 'login.html', {'image_path': image_path})
+<<<<<<< HEAD
+=======
+    else:
+        return render(request, 'login.html', {'image_path': image_path})
+
+>>>>>>> d99f352 (saving)
 
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]
