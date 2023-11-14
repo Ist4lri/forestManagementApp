@@ -3,7 +3,11 @@ import random
 from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import authenticate, login
+<<<<<<< HEAD
 from django.contrib.auth.models import User
+=======
+
+>>>>>>> 11793b8 (try to do connexion view)
 from .models import Foret, Organisme, Contient
 
 
@@ -49,7 +53,9 @@ def connexion(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     if request.method == "POST":
         username = request.POST['username']
+        print(username)
         password = request.POST['password']
+<<<<<<< HEAD
         user = User.objects.filter(username=username, password=password).first()
         if user is not None:
             login(request, user)
@@ -62,6 +68,15 @@ def connexion(request):
         else:
             return render(request, 'login.html')
 >>>>>>> 1187063 (new pic)
+=======
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            return render(request, 'login.html',  {'image_path': image_path})
+>>>>>>> 11793b8 (try to do connexion view)
     else:
         return render(request, 'login.html', {'image_path': image_path})
 
