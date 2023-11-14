@@ -39,7 +39,7 @@ class Foret(models.Model):
         db_table = 'FORET'
 
 
-class Garde(models.Model):
+class Garde(AbstractUser):
     id_garde = models.AutoField(primary_key=True)
     id_foret = models.ForeignKey(
         Foret, models.DO_NOTHING, db_column='id_foret')

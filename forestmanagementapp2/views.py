@@ -53,10 +53,9 @@ def connexion(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            # Rediriger vers la page de tableau de bord après connexion
-            return HttpResponseRedirect('/tableau_de_bord/')
+            return render('oneForestSelected.html')
         else:
-            return render(request, 'connexion.html', {'error_message': 'Nom d\'utilisateur ou mot de passe incorrect'})
+            return render(request, 'login.html')
     else:
         return render(request, 'login.html', {'image_path': image_path})
 
