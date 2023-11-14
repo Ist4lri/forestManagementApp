@@ -1,8 +1,5 @@
 from django import forms
-
-from django.contrib.auth.forms import UserCreationForm
-from .models import Incident,Organisme,Foret,Contient, AuthUser
-
+from .models import Incident,Organisme,Foret,Contient
 
 class PostFormIncident(forms.ModelForm):
 
@@ -25,9 +22,6 @@ class ForestForm(forms.ModelForm):
         model = Foret
         fields = ('nom_foret','description','localisation','superficie','composition_sol','quantite_eau', 'id_foret')
 
-class UserResgitration(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
-        model = AuthUser
 
 class OrganismForm(forms.ModelForm):
     class Meta:
