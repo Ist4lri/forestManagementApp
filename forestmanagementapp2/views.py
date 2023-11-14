@@ -61,16 +61,6 @@ def connexion(request):
         return render(request, 'login.html', {'image_path': image_path})
 
 
-def register(request):
-    if request.method == 'POST':
-        form = UserResgitration(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')  # Redirigez vers la page de connexion
-    else:
-        form = UserResgitration()
-    return render(request, 'registration/register.html', {'form': form})
-
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]
 

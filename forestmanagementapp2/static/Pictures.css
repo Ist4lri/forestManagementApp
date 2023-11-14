@@ -51,11 +51,11 @@ img {
     background-color: #4CAF50;
     padding: 10px 20px;
     border-radius: 10px;
-    cursor: url('black.png'), auto;
+    cursor: url('white.png'), auto;
     transition: background-color 0.3s;
 }
 
-home-page-return:hover {
+.home-page-return:hover {
     background-color: #a2695d;
     cursor: url('black.png'), auto;
     color: #fff;

@@ -7,16 +7,11 @@
 <body>
     <header>
         <h1>Bienvenue sur notre gestionnaire d'écosystèmes forestiers !</h1>
-        <a href="{%  url 'enter_forest'  %}" class="enter-forest">C'est parti ! </a>
-
         <a class="login-link" href="{% url 'connexion' %}">
-
             <img src="{% static 'Login_logos/Logo_off.png' %}">
             <img src="{% static 'Login_logos/Logo_on.png' %}" title="Espace garde" class="hidden">
-            <a href="{%  url 'enter_forest'  %}" class="enter-forest">C'est parti ! </a>
         </a>
     </header>
-    <a href="{%  url 'enter_forest'  %}" class="enter-forest">C'est parti ! </a>
 
     <section class="section-description">
         <h2>Que fait ce gestionnaire ?</h2>
@@ -47,4 +42,5 @@
             Pour plus d'informations, merci d'envoyer un email aux administrateurs de ce site.
         </p>
     </section>
+    <a href="{%  url 'enter_forest'  %}" class="enter-forest">C'est parti ! </a>
 {% endblock %}
