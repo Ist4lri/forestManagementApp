@@ -3,8 +3,8 @@ import random
 from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import User
-from .models import Foret, Organisme, Contient, Garde
+
+from .models import Foret, Organisme, Contient
 
 
 def home(request):
@@ -51,12 +51,13 @@ def connexion(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     if request.method == "POST":
         username = request.POST['username']
+        print(username)
         password = request.POST['password']
         # user = authenticate(request, username=username, password=password)
         user = User.objects.filter(username=username, password=password).first()
         if user is not None:
             login(request, user)
-            return render('oneForestSelected.html')
+            return redirect('home')
         else:
             return render(request, 'login.html', {'image_path': image_path})
     else:
