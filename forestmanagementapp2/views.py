@@ -3,9 +3,9 @@ import random
 from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm, UserResgitration
 from django.contrib.auth import authenticate, login
-from django.http import HttpResponseRedirect
+
 from .models import Foret, Organisme, Contient
-from django.conf import settings
+
 
 
 
@@ -49,14 +49,15 @@ def connexion(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     if request.method == "POST":
         username = request.POST['username']
+        print(username)
         password = request.POST['password']
+
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            # Rediriger vers la page de tableau de bord après connexion
-            return HttpResponseRedirect('/tableau_de_bord/')
+            return redirect('home')
         else:
-            return render(request, 'connexion.html', {'error_message': 'Nom d\'utilisateur ou mot de passe incorrect'})
+            return render(request, 'login.html',  {'image_path': image_path})
     else:
         return render(request, 'login.html', {'image_path': image_path})
 
