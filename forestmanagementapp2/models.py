@@ -1,9 +1,12 @@
 from django.db import models
+<<<<<<< HEAD
 from django.contrib.auth.models import AbstractUser
 <<<<<<< HEAD
 
 =======
 >>>>>>> 9a1ec89 (new pic)
+=======
+>>>>>>> 969e5bd (try to do connexion view)
 
 class Contient(models.Model):
     id_foret = models.OneToOneField(
@@ -131,6 +134,9 @@ class Touche(models.Model):
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 536b389 (try to do connexion view)
 =======
 >>>>>>> 5cda6a3 (login)
 
@@ -152,7 +158,14 @@ class AuthUser(models.Model):
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 >>>>>>> f490680 (try to do connexion view)
 =======
 >>>>>>> f485d44 (login)
+<<<<<<< HEAD
 >>>>>>> 5cda6a3 (login)
+=======
+=======
+>>>>>>> 11793b8 (try to do connexion view)
+>>>>>>> 536b389 (try to do connexion view)
+>>>>>>> 969e5bd (try to do connexion view)

@@ -6,6 +6,10 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from .models import Foret, Organisme, Contient, Garde
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 969e5bd (try to do connexion view)
 def home(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     return render(request, 'homePage.html', {'image_path': image_path})
@@ -50,8 +54,14 @@ def connexion(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     if request.method == "POST":
         username = request.POST['username']
+        print(username)
         password = request.POST['password']
+<<<<<<< HEAD
         # user = authenticate(request, username=username, password=password)
+=======
+
+        #user = authenticate(request, username=username, password=password)
+>>>>>>> 969e5bd (try to do connexion view)
         user = User.objects.filter(username=username, password=password).first()
         garde= Garde.objects.filter(id_garde=user.id).first()
         print(garde.id_foret)
