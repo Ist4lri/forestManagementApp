@@ -56,15 +56,12 @@ def connexion(request):
         user = User.objects.filter(username=username, password=password).first()
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return render('oneForestSelected.html')
         else:
             return render(request, 'login.html', {'image_path': image_path})
-<<<<<<< HEAD
-=======
     else:
         return render(request, 'login.html', {'image_path': image_path})
 
->>>>>>> d99f352 (saving)
 
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]
