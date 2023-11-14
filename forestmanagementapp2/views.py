@@ -80,12 +80,24 @@ def connexion(request):
         print(garde.id_foret)
         if user is not None:
             login(request, user)
+<<<<<<< HEAD
             return render('oneForestSelected.html')
+=======
+<<<<<<< HEAD
+            return render('oneForestSelected')
+=======
+            return render('oneForestSelected.html')
+>>>>>>> 800f79e (new pic)
+>>>>>>> 2a7f7ea (new pic)
         else:
             return render(request, 'login.html')
     else:
         return render(request, 'login.html', {'image_path': image_path})
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 800f79e (new pic)
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]
 

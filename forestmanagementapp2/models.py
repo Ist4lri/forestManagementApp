@@ -46,6 +46,10 @@ class Foret(models.Model):
         db_table = 'FORET'
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 800f79e (new pic)
 class Garde(models.Model): #AbstractUser
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -161,6 +165,7 @@ class AuthUser(models.Model):
         managed = False
         db_table = 'auth_user'
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 <<<<<<< HEAD
@@ -177,3 +182,8 @@ class AuthUser(models.Model):
 >>>>>>> 969e5bd (try to do connexion view)
 =======
 >>>>>>> 913044a (login)
+=======
+
+=======
+>>>>>>> 800f79e (new pic)
+>>>>>>> 2a7f7ea (new pic)
