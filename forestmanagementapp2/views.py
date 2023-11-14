@@ -50,6 +50,7 @@ def connexion(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     if request.method == "POST":
         username = request.POST['username']
+        print(username)
         password = request.POST['password']
         # user = authenticate(request, username=username, password=password)
         user = User.objects.filter(username=username, password=password).first()

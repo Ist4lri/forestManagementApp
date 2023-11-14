@@ -118,7 +118,6 @@ class Touche(models.Model):
         managed = False
         db_table = 'TOUCHE'
 
-
 class AuthUser(models.Model):
     password = models.CharField(max_length=128)
     last_login = models.DateTimeField(blank=True, null=True)
@@ -134,4 +133,3 @@ class AuthUser(models.Model):
     class Meta:
         managed = False
         db_table = 'auth_user'
-

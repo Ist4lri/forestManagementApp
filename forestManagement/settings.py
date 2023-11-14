@@ -128,6 +128,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 LOGIN_REDIRECT_URL = 'home'
 
@@ -140,3 +141,10 @@ LOGIN_REDIRECT_URL = 'home'
 
 AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend']
 >>>>>>> b2171e6 (login)
+=======
+LOGIN_REDIRECT_URL = 'home'
+
+AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend']
+=======
+>>>>>>> f490680 (try to do connexion view)
+>>>>>>> 68188cd (try to do connexion view)
