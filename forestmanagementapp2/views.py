@@ -53,9 +53,15 @@ def connexion(request):
         user = User.objects.filter(username=username, password=password).first()
         if user is not None:
             login(request, user)
+<<<<<<< HEAD
             return redirect('home')
         else:
             return render(request, 'login.html', {'image_path': image_path})
+=======
+            return render('oneForestSelected.html')
+        else:
+            return render(request, 'login.html')
+>>>>>>> 1187063 (new pic)
     else:
         return render(request, 'login.html', {'image_path': image_path})
 
@@ -122,6 +128,7 @@ def organism_info(request,nom_organisme,nom_foret):
 
     nombre_organisme = contient_entry.nombre_organisme
 
+<<<<<<< HEAD
 
 
     return render(request, 'info_organism.html', {
@@ -132,6 +139,9 @@ def organism_info(request,nom_organisme,nom_foret):
         'nombre_organisme':nombre_organisme, 
         'nutrition': nutrition
     })
+=======
+    return render(request, 'info_organism.html', {'image_path': image_path, 'oneSpecies':nom_organisme, 'nom_foret':nom_foret, 'description':description, 'nombre_organisme':nombre_organisme, 'nutrition': nutrition})
+>>>>>>> 1187063 (new pic)
 
 
 def v_list_of_species(request, nom_foret):
