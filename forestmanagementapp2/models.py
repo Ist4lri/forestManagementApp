@@ -127,6 +127,7 @@ class Touche(models.Model):
     class Meta:
         managed = False
         db_table = 'TOUCHE'
+<<<<<<< HEAD
 
 class AuthUser(models.Model):
     password = models.CharField(max_length=128)
@@ -147,3 +148,5 @@ class AuthUser(models.Model):
 =======
 
 >>>>>>> 11793b8 (try to do connexion view)
+=======
+>>>>>>> b2171e6 (login)
