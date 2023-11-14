@@ -56,9 +56,9 @@ def connexion(request):
         user = User.objects.filter(username=username, password=password).first()
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return render('oneForestSelected.html')
         else:
-            return render(request, 'login.html', {'image_path': image_path})
+            return render(request, 'login.html')
     else:
         return render(request, 'login.html', {'image_path': image_path})
 
