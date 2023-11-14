@@ -118,6 +118,7 @@ class Touche(models.Model):
         managed = False
         db_table = 'TOUCHE'
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 class AuthUser(models.Model):
@@ -137,3 +138,5 @@ class AuthUser(models.Model):
         db_table = 'auth_user'
 
 >>>>>>> 11793b8 (try to do connexion view)
+=======
+>>>>>>> b2171e6 (login)
