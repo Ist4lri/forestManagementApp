@@ -113,6 +113,10 @@ section {
     border-radius: 12px;
 }
 
+.section-description p {
+    text-align: justify;
+}
+
 section h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
