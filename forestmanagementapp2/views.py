@@ -48,10 +48,9 @@ def connexion(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            # Rediriger vers la page de tableau de bord après connexion
-            return HttpResponseRedirect('/tableau_de_bord/')
+            return render('oneForestSelected.html')
         else:
-            return render(request, 'connexion.html', {'error_message': 'Nom d\'utilisateur ou mot de passe incorrect'})
+            return render(request, 'login.html')
     else:
         return render(request, 'login.html', {'image_path': image_path})
 
@@ -116,8 +115,6 @@ def organism_info(request,nom_organisme,nom_foret):
     contient_entry = Contient.objects.filter(id_foret=id_foret, id_organisme=id_organisme).first()
 
     nombre_organisme = contient_entry.nombre_organisme
-
-
 
     return render(request, 'info_organism.html', {'image_path': image_path, 'oneSpecies':nom_organisme, 'nom_foret':nom_foret, 'description':description, 'nombre_organisme':nombre_organisme, 'nutrition': nutrition})
 
