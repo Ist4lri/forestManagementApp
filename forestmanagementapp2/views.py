@@ -3,12 +3,17 @@ import random
 from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import authenticate, login
+<<<<<<< HEAD
 from django.contrib.auth.models import User
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> 346f129 (login)
 from .models import Foret, Organisme, Contient, Garde
+=======
+
+from .models import Foret, Organisme, Contient
+>>>>>>> 653c198 (try to do connexion view)
 
 <<<<<<< HEAD
 =======
@@ -61,6 +66,7 @@ def connexion(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     if request.method == "POST":
         username = request.POST['username']
+        print(username)
         password = request.POST['password']
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -72,6 +78,7 @@ def connexion(request):
         #user = authenticate(request, username=username, password=password)
 >>>>>>> 969e5bd (try to do connexion view)
         user = User.objects.filter(username=username, password=password).first()
+<<<<<<< HEAD
 <<<<<<< HEAD
         garde= Garde.objects.filter(id_garde=user.id).first()
 =======
@@ -89,15 +96,18 @@ def connexion(request):
             return render('oneForestSelected.html')
 >>>>>>> 800f79e (new pic)
 >>>>>>> 2a7f7ea (new pic)
+=======
+        garde= Garde.objects.filter(id_garde=user.id).first()
+        print(garde.id_foret)
+        if user is not None:
+            login(request, user)
+            return render('oneForestSelected')
+>>>>>>> 653c198 (try to do connexion view)
         else:
             return render(request, 'login.html')
     else:
         return render(request, 'login.html', {'image_path': image_path})
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 800f79e (new pic)
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]
 
