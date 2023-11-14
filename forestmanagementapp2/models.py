@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9a1ec89 (new pic)
 
 class Contient(models.Model):
     id_foret = models.OneToOneField(
@@ -40,8 +43,15 @@ class Foret(models.Model):
         db_table = 'FORET'
 
 
+<<<<<<< HEAD
 class Garde(models.Model): #AbstractUser
+<<<<<<< HEAD
 
+=======
+=======
+class Garde(AbstractUser):
+>>>>>>> 1187063 (new pic)
+>>>>>>> 9a1ec89 (new pic)
     id_garde = models.AutoField(primary_key=True)
     id_foret = models.ForeignKey(
         Foret, models.DO_NOTHING, db_column='id_foret')

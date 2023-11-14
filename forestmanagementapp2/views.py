@@ -125,6 +125,10 @@ def organism_info(request,nom_organisme,nom_foret):
     contient_entry = Contient.objects.filter(id_foret=id_foret, id_organisme=id_organisme).first()
 
     nombre_organisme = contient_entry.nombre_organisme
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9a1ec89 (new pic)
     return render(request, 'info_organism.html', {
         'image_path': image_path, 
         'oneSpecies':nom_organisme, 
