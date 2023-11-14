@@ -46,8 +46,8 @@ class Foret(models.Model):
         db_table = 'FORET'
 
 
-<<<<<<< HEAD
 class Garde(models.Model): #AbstractUser
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -55,6 +55,8 @@ class Garde(models.Model): #AbstractUser
 class Garde(AbstractUser):
 >>>>>>> 1187063 (new pic)
 >>>>>>> 9a1ec89 (new pic)
+=======
+>>>>>>> 913044a (login)
     id_garde = models.AutoField(primary_key=True)
     id_foret = models.ForeignKey(
         Foret, models.DO_NOTHING, db_column='id_foret')
@@ -131,6 +133,7 @@ class Touche(models.Model):
         managed = False
         db_table = 'TOUCHE'
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -139,6 +142,8 @@ class Touche(models.Model):
 >>>>>>> 536b389 (try to do connexion view)
 =======
 >>>>>>> 5cda6a3 (login)
+=======
+>>>>>>> 913044a (login)
 
 class AuthUser(models.Model):
     password = models.CharField(max_length=128)
@@ -159,6 +164,7 @@ class AuthUser(models.Model):
 =======
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f490680 (try to do connexion view)
 =======
 >>>>>>> f485d44 (login)
@@ -169,3 +175,5 @@ class AuthUser(models.Model):
 >>>>>>> 11793b8 (try to do connexion view)
 >>>>>>> 536b389 (try to do connexion view)
 >>>>>>> 969e5bd (try to do connexion view)
+=======
+>>>>>>> 913044a (login)

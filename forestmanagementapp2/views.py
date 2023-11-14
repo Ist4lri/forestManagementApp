@@ -4,10 +4,14 @@ from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+<<<<<<< HEAD
 from .models import Foret, Organisme, Contient, Garde
 
 <<<<<<< HEAD
 =======
+=======
+from .models import Foret, Organisme, Contient
+>>>>>>> 913044a (login)
 
 >>>>>>> 969e5bd (try to do connexion view)
 def home(request):
@@ -54,12 +58,14 @@ def connexion(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     if request.method == "POST":
         username = request.POST['username']
-        print(username)
         password = request.POST['password']
+<<<<<<< HEAD
 <<<<<<< HEAD
         # user = authenticate(request, username=username, password=password)
 =======
 
+=======
+>>>>>>> 913044a (login)
         #user = authenticate(request, username=username, password=password)
 >>>>>>> 969e5bd (try to do connexion view)
         user = User.objects.filter(username=username, password=password).first()

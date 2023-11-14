@@ -140,7 +140,9 @@ AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend']
 =======
 LOGIN_REDIRECT_URL = 'home'
 
+<<<<<<< HEAD
 AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend']
+<<<<<<< HEAD
 >>>>>>> b2171e6 (login)
 =======
 LOGIN_REDIRECT_URL = 'home'
@@ -154,3 +156,8 @@ LOGIN_REDIRECT_URL = 'home'
 
 AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend']
 >>>>>>> 5cda6a3 (login)
+=======
+=======
+AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend']
+>>>>>>> b2171e6 (login)
+>>>>>>> 913044a (login)
