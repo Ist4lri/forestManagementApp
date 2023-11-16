@@ -40,7 +40,11 @@ def home_page(request, nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     foret = Foret.objects.get(nom_foret=nom_foret)
     description = foret.get_description()
-    return render(request, 'oneForestSelected.html', {'nom_foret': nom_foret, 'image_path': image_path, 'description': description})
+    latitude=foret.latitude
+    longitude=foret.longitude
+    print(latitude)
+    print(longitude)
+    return render(request, 'oneForestSelected.html', {'nom_foret': nom_foret, 'image_path': image_path, 'description': description, 'latitude':latitude, 'longitude':longitude})
 
 
 def connexion(request):
