@@ -165,5 +165,3 @@ def pictures(request, nom_foret):
         'image_list': image_list, 
         'nom_foret': nom_foret
     })
-
-ouais
