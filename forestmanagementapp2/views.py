@@ -1,11 +1,11 @@
 import os
 import random
 from django.shortcuts import render, redirect
-from .forms import PostFormIncident, PostFormOrganism, ForestForm, UserResgitration
+from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import authenticate, login
-from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 from .models import Foret, Organisme, Contient
-from django.conf import settings
+
 
 
 
@@ -50,26 +50,16 @@ def connexion(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        user = User.objects.filter(username=username, password=password).first()
         if user is not None:
             login(request, user)
-            # Rediriger vers la page de tableau de bord après connexion
-            return HttpResponseRedirect('/tableau_de_bord/')
+            return redirect('home')
         else:
-            return render(request, 'connexion.html', {'error_message': 'Nom d\'utilisateur ou mot de passe incorrect'})
+            return render(request, 'login.html', {'image_path': image_path})
     else:
         return render(request, 'login.html', {'image_path': image_path})
 
 
-def register(request):
-    if request.method == 'POST':
-        form = UserResgitration(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')  # Redirigez vers la page de connexion
-    else:
-        form = UserResgitration()
-    return render(request, 'registration/register.html', {'form': form})
 
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]

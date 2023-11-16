@@ -33,6 +33,4 @@ urlpatterns = [
     path('', home, name='home'),
     path('accueil/<str:nom_foret>/pictures', pictures, name='pictures')
 
-
-
 ]
