@@ -5,6 +5,9 @@ from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 346f129 (login)
 from .models import Foret, Organisme, Contient, Garde
 
 <<<<<<< HEAD
@@ -69,7 +72,11 @@ def connexion(request):
         #user = authenticate(request, username=username, password=password)
 >>>>>>> 969e5bd (try to do connexion view)
         user = User.objects.filter(username=username, password=password).first()
+<<<<<<< HEAD
         garde= Garde.objects.filter(id_garde=user.id).first()
+=======
+        garde=Garde.objects.filter(id_garde=user.id).first()
+>>>>>>> 346f129 (login)
         print(garde.id_foret)
         if user is not None:
             login(request, user)
