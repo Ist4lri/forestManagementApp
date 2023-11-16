@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login
 <<<<<<< HEAD
 <<<<<<< HEAD
 from django.contrib.auth.models import User
+<<<<<<< HEAD
 =======
 
 >>>>>>> 11793b8 (try to do connexion view)
@@ -13,6 +14,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import User
 >>>>>>> b2171e6 (login)
 from .models import Foret, Organisme, Contient
+=======
+from .models import Foret, Organisme, Contient, Garde
+>>>>>>> 3e67483 (login)
 
 
 
@@ -61,8 +65,14 @@ def connexion(request):
 <<<<<<< HEAD
 <<<<<<< HEAD
         user = User.objects.filter(username=username, password=password).first()
+        garde=Garde.objects.filter(id_garde=user.id).first()
+        print(garde.id_foret)
+
+
+
         if user is not None:
             login(request, user)
+<<<<<<< HEAD
 <<<<<<< HEAD
             return redirect('home')
         else:
@@ -81,6 +91,9 @@ def connexion(request):
         if user is not None:
             login(request, user)
             return redirect('home')
+=======
+            return render('oneForestSelected.html', {'nom_foret' : nom_foret})
+>>>>>>> 3e67483 (login)
         else:
 <<<<<<< HEAD
             return render(request, 'login.html',  {'image_path': image_path})
