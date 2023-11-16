@@ -19,12 +19,13 @@ class Contient(models.Model):
 class Foret(models.Model):
     id_foret = models.AutoField(primary_key=True)
     nom_foret = models.TextField(blank=True)
-    localisation = models.TextField(blank=True)
+    latitude = models.TextField(blank=True)
     densite = models.IntegerField(blank=True)
     superficie = models.IntegerField(blank=True)
     quantite_eau = models.IntegerField(blank=True)
     composition_sol = models.TextField(blank=True)
     description = models.TextField(blank=True)
+    longitude = models.TextField(blank=True)
 
     def __str__(self):
         return self.nom_foret

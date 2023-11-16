@@ -3,13 +3,31 @@ showSlides();
 
 function showSlides() {
     let slides = document.getElementsByClassName("mySlides");
+
+    // Hide all slides
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 2000); // Change image every 3 seconds
+
+    // Display the current slide
+    slides[slideIndex].style.display = "block";
 }
+
+// Set up click event listeners for arrows
+document.querySelector(".prev").addEventListener("click", function() {
+    let slides = document.getElementsByClassName("mySlides"); // Ajout de cette ligne
+    slideIndex--;
+    if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
+    }
+    showSlides();
+});
+
+document.querySelector(".next").addEventListener("click", function() {
+    let slides = document.getElementsByClassName("mySlides"); // Ajout de cette ligne
+    slideIndex++;
+    if (slideIndex >= slides.length) {
+        slideIndex = 0;
+    }
+    showSlides();
+});

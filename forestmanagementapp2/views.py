@@ -51,14 +51,9 @@ def connexion(request):
         username = request.POST['username']
         password = request.POST['password']
         user = User.objects.filter(username=username, password=password).first()
-        garde=Garde.objects.filter(id_garde=user.id).first()
-        print(garde.id_foret)
-
-
-
         if user is not None:
             login(request, user)
-            return render('oneForestSelected.html', {'nom_foret' : nom_foret})
+            return render('home')
         else:
             return render(request, 'login.html', {'image_path': image_path})
     else:
