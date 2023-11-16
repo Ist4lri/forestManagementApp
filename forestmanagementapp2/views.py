@@ -3,20 +3,8 @@ import random
 from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import authenticate, login
-<<<<<<< HEAD
-<<<<<<< HEAD
 from django.contrib.auth.models import User
-from .models import Foret, Organisme, Contient
-=======
-
-=======
-from django.contrib.auth.models import User
->>>>>>> b2171e6 (login)
-from .models import Foret, Organisme, Contient
-
-
->>>>>>> 11793b8 (try to do connexion view)
-
+from .models import Foret, Organisme, Contient, Garde
 
 def home(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
@@ -63,31 +51,15 @@ def connexion(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-<<<<<<< HEAD
-<<<<<<< HEAD
         # user = authenticate(request, username=username, password=password)
         user = User.objects.filter(username=username, password=password).first()
+        garde= Garde.objects.filter(id_garde=user.id).first()
+        print(garde.id_foret)
         if user is not None:
             login(request, user)
             return render('oneForestSelected.html')
         else:
             return render(request, 'login.html')
-=======
-
-        user = authenticate(request, username=username, password=password)
-=======
-        user = User.objects.filter(username=username, password=password).first()
->>>>>>> b2171e6 (login)
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-<<<<<<< HEAD
-            return render(request, 'login.html',  {'image_path': image_path})
->>>>>>> 11793b8 (try to do connexion view)
-=======
-            return render(request, 'login.html', {'image_path': image_path})
->>>>>>> b2171e6 (login)
     else:
         return render(request, 'login.html', {'image_path': image_path})
 
