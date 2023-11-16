@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from .models import Foret, Organisme, Contient
+from .models import Foret, Organisme, Contient, Garde
 
 
 
@@ -51,9 +51,14 @@ def connexion(request):
         username = request.POST['username']
         password = request.POST['password']
         user = User.objects.filter(username=username, password=password).first()
+        garde=Garde.objects.filter(id_garde=user.id).first()
+        print(garde.id_foret)
+
+
+
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return render('oneForestSelected.html', {'nom_foret' : nom_foret})
         else:
             return render(request, 'login.html', {'image_path': image_path})
     else:
