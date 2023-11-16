@@ -7,25 +7,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'Pictures.css' %}">
-    <title>{{nom_foret}}</title>
-
+    <title>{{ nom_foret }}</title>
 </head>
 <body>
-   <header>
+    <header>
         <h1>{{ nom_foret }}</h1>
         <a class="home-page-return" href="{% url 'home_page' nom_foret=nom_foret %}">Retour</a>
-
-        </a>
-   </header>
+    </header>
 
     <div class="slideshow-container">
+
         {% for image in image_list %}
+
             <div class="mySlides fade">
-              <img src="{% static nom_foret|add:'/'|add:image %}" alt="{{ nom_foret }}">
+
+                <img src="{% static nom_foret|add:'/'|add:image %}" alt="{{ nom_foret }}">
 
             </div>
         {% endfor %}
     </div>
+      <a class="prev">&#10094;</a>
+     <a class="next">&#10095;</a>
     <script src="{% static 'js/slidepictures.js' %}"></script>
 </body>
 </html>

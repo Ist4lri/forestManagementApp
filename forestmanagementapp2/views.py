@@ -3,22 +3,8 @@ import random
 from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import authenticate, login
-<<<<<<< HEAD
-<<<<<<< HEAD
 from django.contrib.auth.models import User
-<<<<<<< HEAD
-=======
-
->>>>>>> 11793b8 (try to do connexion view)
-=======
-from django.contrib.auth.models import User
->>>>>>> b2171e6 (login)
-from .models import Foret, Organisme, Contient
-=======
 from .models import Foret, Organisme, Contient, Garde
->>>>>>> 3e67483 (login)
-
-
 
 
 def home(request):
@@ -62,49 +48,13 @@ def connexion(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-<<<<<<< HEAD
-<<<<<<< HEAD
+        # user = authenticate(request, username=username, password=password)
         user = User.objects.filter(username=username, password=password).first()
-        garde=Garde.objects.filter(id_garde=user.id).first()
-        print(garde.id_foret)
-
-
-
-        if user is not None:
-            login(request, user)
-<<<<<<< HEAD
-<<<<<<< HEAD
-            return redirect('home')
-        else:
-            return render(request, 'login.html', {'image_path': image_path})
-=======
-            return render('oneForestSelected.html')
-        else:
-            return render(request, 'login.html')
->>>>>>> 1187063 (new pic)
-=======
-
-        user = authenticate(request, username=username, password=password)
-=======
-        user = User.objects.filter(username=username, password=password).first()
->>>>>>> b2171e6 (login)
         if user is not None:
             login(request, user)
             return redirect('home')
-=======
-            return render('oneForestSelected.html', {'nom_foret' : nom_foret})
->>>>>>> 3e67483 (login)
         else:
-<<<<<<< HEAD
-            return render(request, 'login.html',  {'image_path': image_path})
->>>>>>> 11793b8 (try to do connexion view)
-=======
             return render(request, 'login.html', {'image_path': image_path})
->>>>>>> b2171e6 (login)
-    else:
-        return render(request, 'login.html', {'image_path': image_path})
-
-
 
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]
@@ -166,10 +116,6 @@ def organism_info(request,nom_organisme,nom_foret):
     contient_entry = Contient.objects.filter(id_foret=id_foret, id_organisme=id_organisme).first()
 
     nombre_organisme = contient_entry.nombre_organisme
-
-<<<<<<< HEAD
-
-
     return render(request, 'info_organism.html', {
         'image_path': image_path, 
         'oneSpecies':nom_organisme, 
@@ -178,9 +124,6 @@ def organism_info(request,nom_organisme,nom_foret):
         'nombre_organisme':nombre_organisme, 
         'nutrition': nutrition
     })
-=======
-    return render(request, 'info_organism.html', {'image_path': image_path, 'oneSpecies':nom_organisme, 'nom_foret':nom_foret, 'description':description, 'nombre_organisme':nombre_organisme, 'nutrition': nutrition})
->>>>>>> 1187063 (new pic)
 
 
 def v_list_of_species(request, nom_foret):
