@@ -149,9 +149,12 @@ def organism_info(request,nom_organisme,nom_foret):
 
     nombre_organisme = contient_entry.nombre_organisme
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 9a1ec89 (new pic)
+=======
+>>>>>>> 769352b (add map)
     return render(request, 'info_organism.html', {
         'image_path': image_path, 
         'oneSpecies':nom_organisme, 
