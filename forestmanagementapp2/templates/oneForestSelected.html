@@ -23,15 +23,25 @@
     </section>
 
     <section id="photos">
-        <h2><a href="{% url 'pictures' nom_foret=nom_foret %}">Photos</a></h2>
+        <h2><a href="{% url 'pictures' nom_foret=nom_foret %}"style="display: flex; align-items: center;">Photos
+         <img src="{% static 'photo.png' %}" style="width: 40px; height: 40px; margin-left: 10px;"></a>
+        </h2>
     </section>
 
     <section id="organismes">
-        <h2><a href="{% url 'list_species' nom_foret=nom_foret %}">Faunes et Flores</a></h2>
+        <h2><a href="{% url 'list_species' nom_foret=nom_foret %}"style="display: flex; align-items: center;">Faune et Flore
+            <img src="{% static 'fauneflore.png' %}" style="width: 40px; height: 40px; margin-left: 10px;"></a>
+        </h2>
     </section>
 
     <section id="signaler-incident">
-        <h2><a href="{% url 'incident_form' %}">Signaler un Incident</a></h2>
+      <h2>
+    <a href="{% url 'incident_form' %}" style="display: flex; align-items: center;">
+        Signaler un Incident
+        <img src="{% static 'attention.png' %}"style="width: 40px; height: 40px; margin-left: 10px;">
+    </a>
+</h2>
+
     </section>
 
 
