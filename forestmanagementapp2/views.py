@@ -6,9 +6,6 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from .models import Foret, Organisme, Contient, Garde
 
-
-
-
 def home(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     return render(request, 'homePage.html', {'image_path': image_path})
@@ -54,16 +51,17 @@ def connexion(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
+        #user = authenticate(request, username=username, password=password)
         user = User.objects.filter(username=username, password=password).first()
+        garde= Garde.objects.filter(id_garde=user.id).first()
+        print(garde.id_foret)
         if user is not None:
             login(request, user)
-            return render('home')
+            return render('oneForestSelected.html')
         else:
-            return render(request, 'login.html', {'image_path': image_path})
+            return render(request, 'login.html')
     else:
         return render(request, 'login.html', {'image_path': image_path})
-
-
 
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]
@@ -125,9 +123,6 @@ def organism_info(request,nom_organisme,nom_foret):
     contient_entry = Contient.objects.filter(id_foret=id_foret, id_organisme=id_organisme).first()
 
     nombre_organisme = contient_entry.nombre_organisme
-
-
-
     return render(request, 'info_organism.html', {
         'image_path': image_path, 
         'oneSpecies':nom_organisme, 

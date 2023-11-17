@@ -32,7 +32,7 @@ img {
     background-color: #4CAF50;
     padding: 10px 20px;
     border-radius: 10px;
-    cursor: url('black.png'), auto;
+    cursor: url('white.png'), auto;
     transition: background-color 0.3s;
 }
 

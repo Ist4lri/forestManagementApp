@@ -1,5 +1,4 @@
 body {
-
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
@@ -149,10 +148,6 @@ html {
 }
 
 .enter-forest {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
@@ -161,11 +156,12 @@ html {
     border-radius: 10px;
     cursor: url('black.png'), auto;
     transition: background-color 0.3s;
+    position: sticky;
+    left: 46%;
 }
 
 .enter-forest:hover {
     background-color: #a2695d;
     cursor: url('black.png'), auto;
     color: #fff;
-
 }

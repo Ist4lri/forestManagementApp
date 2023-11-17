@@ -6,8 +6,8 @@
 - [x] Faire la home_page
 - [x] Voir pour créer des menu, avec différentes fonctionnalités
 - [x] Page login
-- [ ] MaJ des éléments de la forêt, Liste des missions (A faire après login et formu)
-- [ ] Designer la fiche espèce 
+- [ ] Rendre la page des photos de la forêt un peu plus jolie.
+- [x] Designer la fiche espèce 
 
 
 ### PG TODO :
@@ -17,11 +17,14 @@
 - [x] Chercher des photos, et comment les implémenter
 - [x] Page lsite espèce
 - [x] generate random background
+- [ ] Typo and Chore
+- [ ] Fixer le login
 
 
 ### BOTH TODO :
 
 - [x] Créer les tables et les remplir
+- [ ] MaJ des éléments de la forêt, Liste des missions (A faire après login et formu)
 - [ ] Faire un login et des comptes
 - [ ] faire une carte avec MAPS
 
