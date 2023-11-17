@@ -93,10 +93,15 @@ img {
     right: 10px;
 }
 
-.prev:hover, .next:hover {
+.prev:hover{
     background-color: #a2695d;
     cursor: url('black.png'), auto;
 }
 footer {
  background: #a7d8a2;
  }
+
+.next:hover{
+    background-color: #a2695d;
+    cursor: url('black.png'), auto;
+}

@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <h1>{{ nom_foret }}</h1>
+        <h1 class="nomforet">{{ nom_foret }}</h1>
         <a class="forest-return" href="{% url 'enter_forest' %}" title="Choisir une autre forêt">Changer de foret</a>
         <a class="login-link" href="{% url 'connexion' %}">
             <img src="{% static 'Login_logos/Logo_off.png' %}">
