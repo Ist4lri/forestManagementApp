@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from .models import Foret, Organisme, Contient
+from .models import Foret, Organisme, Contient, Garde
 
 
 
@@ -42,7 +42,11 @@ def home_page(request, nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     foret = Foret.objects.get(nom_foret=nom_foret)
     description = foret.get_description()
-    return render(request, 'oneForestSelected.html', {'nom_foret': nom_foret, 'image_path': image_path, 'description': description})
+    latitude=foret.latitude
+    longitude=foret.longitude
+    print(latitude)
+    print(longitude)
+    return render(request, 'oneForestSelected.html', {'nom_foret': nom_foret, 'image_path': image_path, 'description': description, 'latitude':latitude, 'longitude':longitude})
 
 
 def connexion(request):
@@ -53,7 +57,7 @@ def connexion(request):
         user = User.objects.filter(username=username, password=password).first()
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return render('home')
         else:
             return render(request, 'login.html', {'image_path': image_path})
     else:

@@ -3,15 +3,17 @@
 {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'home_page.css' %}">
     <title>{{ nom_foret }}</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzqISK59scnOyIqLzi1ksnkJHgV8sYfRI&libraries=places"></script>
 </head>
 <body>
     <header>
-
         <h1>{{ nom_foret }}</h1>
         <a class="forest-return" href="{% url 'enter_forest' %}" title="Choisir une autre forêt">Changer de foret</a>
         <a class="login-link" href="{% url 'connexion' %}">
             <img src="{% static 'Login_logos/Logo_off.png' %}">
             <img src="{% static 'Login_logos/Logo_on.png' %}" title="Se connecter" class="hidden">
+
+
         </a>
     </header>
 
@@ -22,16 +24,30 @@
 
     <section id="photos">
         <h2><a href="{% url 'pictures' nom_foret=nom_foret %}">Photos</a></h2>
-
     </section>
 
     <section id="organismes">
         <h2><a href="{% url 'list_species' nom_foret=nom_foret %}">Faunes et Flores</a></h2>
-
     </section>
 
     <section id="signaler-incident">
         <h2><a href="{% url 'incident_form' %}">Signaler un Incident</a></h2>
-
     </section>
+
+
+
+
+
+
+
+
+
+     <script src="{% static 'js/map.js' %}"></script>
+    <script> var latitude = {{ latitude }};
+        var longitude = {{ longitude }};
+    </script>
+<div id="map" style="height: 200px; width: 40%; margin: 0 auto;"></div>
+</body>
+
+</html>
 {% endblock %}
