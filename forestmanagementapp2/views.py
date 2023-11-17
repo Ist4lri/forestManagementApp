@@ -138,23 +138,23 @@ def v_list_of_species(request, nom_foret):
     forest = Foret.objects.get(nom_foret=nom_foret)
     #Je récupère l'id_foret correspondant car dans la table contient j'en ai besoin
     id_forest = forest.pk
-    print(id_forest)
     #Je récupère dans la table contient les id_organismes qui correpondent à mon id_foret
     contient_entries = Contient.objects.filter(id_foret=id_forest).values_list('id_organisme', flat=True)
 
     # Je transforme le QuerySet en une liste Python qui contient la liste de mes id_foret
     id_organismes = list(contient_entries)
 
-
     # Je cherche les noms d'organismes associés aux id de ma liste id_organismes
-    organismes= Organisme.objects.filter(id_organisme__in=id_organismes).values_list('nom_organisme', flat=True)
-    list_organismes=list(organismes)
+    organismes= Organisme.objects.filter(id_organisme__in=id_organismes).values_list('nom_organisme', 'type')
+    faune_list = [org[0] for org in organismes if org[1] == 'Faune']
+    flore_list = [org[0] for org in organismes if org[1] == 'Flore']
 
 
     return render(request, "listOfSpecies.html", {
         'image_path': image_path,
         'nom_foret': nom_foret,
-        'species':list_organismes
+        'faune_list':faune_list,
+        'flore_list': flore_list
     })
 
 
