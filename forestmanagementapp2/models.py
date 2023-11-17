@@ -1,12 +1,6 @@
 from django.db import models
-<<<<<<< HEAD
 from django.contrib.auth.models import AbstractUser
-<<<<<<< HEAD
 
-=======
->>>>>>> 9a1ec89 (new pic)
-=======
->>>>>>> 969e5bd (try to do connexion view)
 
 class Contient(models.Model):
     id_foret = models.OneToOneField(
@@ -46,21 +40,7 @@ class Foret(models.Model):
         db_table = 'FORET'
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 800f79e (new pic)
 class Garde(models.Model): #AbstractUser
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
-class Garde(AbstractUser):
->>>>>>> 1187063 (new pic)
->>>>>>> 9a1ec89 (new pic)
-=======
->>>>>>> 913044a (login)
     id_garde = models.AutoField(primary_key=True)
     id_foret = models.ForeignKey(
         Foret, models.DO_NOTHING, db_column='id_foret')
@@ -136,18 +116,6 @@ class Touche(models.Model):
     class Meta:
         managed = False
         db_table = 'TOUCHE'
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 536b389 (try to do connexion view)
-=======
->>>>>>> 5cda6a3 (login)
-=======
->>>>>>> 913044a (login)
 
 class AuthUser(models.Model):
     password = models.CharField(max_length=128)
@@ -164,26 +132,3 @@ class AuthUser(models.Model):
     class Meta:
         managed = False
         db_table = 'auth_user'
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> f490680 (try to do connexion view)
-=======
->>>>>>> f485d44 (login)
-<<<<<<< HEAD
->>>>>>> 5cda6a3 (login)
-=======
-=======
->>>>>>> 11793b8 (try to do connexion view)
->>>>>>> 536b389 (try to do connexion view)
->>>>>>> 969e5bd (try to do connexion view)
-=======
->>>>>>> 913044a (login)
-=======
-
-=======
->>>>>>> 800f79e (new pic)
->>>>>>> 2a7f7ea (new pic)

@@ -3,29 +3,9 @@ import random
 from django.shortcuts import render, redirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import authenticate, login
-<<<<<<< HEAD
-<<<<<<< HEAD
 from django.contrib.auth.models import User
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 346f129 (login)
 from .models import Foret, Organisme, Contient, Garde
-=======
 
-=======
-from django.contrib.auth.models import User
->>>>>>> 2648205 (login)
-from .models import Foret, Organisme, Contient
->>>>>>> 653c198 (try to do connexion view)
-
-<<<<<<< HEAD
-=======
-=======
-from .models import Foret, Organisme, Contient
->>>>>>> 913044a (login)
-
->>>>>>> 969e5bd (try to do connexion view)
 def home(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     return render(request, 'homePage.html', {'image_path': image_path})
@@ -71,41 +51,13 @@ def connexion(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-<<<<<<< HEAD
-<<<<<<< HEAD
-        # user = authenticate(request, username=username, password=password)
-=======
-
-=======
->>>>>>> 913044a (login)
         #user = authenticate(request, username=username, password=password)
->>>>>>> 969e5bd (try to do connexion view)
         user = User.objects.filter(username=username, password=password).first()
-<<<<<<< HEAD
-<<<<<<< HEAD
-        garde= Garde.objects.filter(id_garde=user.id).first()
-=======
-        garde=Garde.objects.filter(id_garde=user.id).first()
->>>>>>> 346f129 (login)
-        print(garde.id_foret)
-        if user is not None:
-            login(request, user)
-<<<<<<< HEAD
-            return render('oneForestSelected.html')
-=======
-<<<<<<< HEAD
-            return render('oneForestSelected')
-=======
-            return render('oneForestSelected.html')
->>>>>>> 800f79e (new pic)
->>>>>>> 2a7f7ea (new pic)
-=======
         garde= Garde.objects.filter(id_garde=user.id).first()
         print(garde.id_foret)
         if user is not None:
             login(request, user)
-            return render('oneForestSelected')
->>>>>>> 653c198 (try to do connexion view)
+            return render('oneForestSelected.html')
         else:
             return render(request, 'login.html')
     else:
@@ -171,13 +123,6 @@ def organism_info(request,nom_organisme,nom_foret):
     contient_entry = Contient.objects.filter(id_foret=id_foret, id_organisme=id_organisme).first()
 
     nombre_organisme = contient_entry.nombre_organisme
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 9a1ec89 (new pic)
-=======
->>>>>>> 769352b (add map)
     return render(request, 'info_organism.html', {
         'image_path': image_path, 
         'oneSpecies':nom_organisme, 
