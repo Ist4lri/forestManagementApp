@@ -87,6 +87,7 @@ class Organisme(models.Model):
     quantite_consommee_CO2 = models.IntegerField(
         db_column='quantite_consommee_CO2')
     description = models.TextField(blank=True)
+    type = models.TextField(blank=True)
 
     class Meta:
         managed = False

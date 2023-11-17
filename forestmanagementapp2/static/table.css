@@ -1,8 +1,9 @@
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
+    
 }
 
 .home-page-return {
@@ -30,8 +31,8 @@ table {
     border-collapse: separate;
     border-spacing: 0;
     width: 25%;
-    text-align: center;
     background-color: transparent;
+    margin: 50px;
 }
 
 th {
