@@ -6,7 +6,7 @@
 - [x] Faire la home_page
 - [x] Voir pour créer des menu, avec différentes fonctionnalités
 - [x] Page login
-- [ ] Rendre la page des photos de la forêt un peu plus jolie.
+- [x] Rendre la page des photos de la forêt un peu plus jolie.
 - [x] Designer la fiche espèce 
 
 
@@ -26,7 +26,7 @@
 - [x] Créer les tables et les remplir
 - [ ] MaJ des éléments de la forêt, Liste des missions (A faire après login et formu)
 - [ ] Faire un login et des comptes
-- [ ] faire une carte avec MAPS
+- [x] faire une carte avec MAPS
 
 ### Potentielle idées futures :
 
