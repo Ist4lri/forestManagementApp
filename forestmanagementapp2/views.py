@@ -159,8 +159,10 @@ def v_list_of_species(request, nom_foret):
 
 
 def pictures(request, nom_foret):
+    image_path = f"/forest_pic/{random.choice(randomImage())}"
     image_list=os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), f"static/{nom_foret}"))
     return render(request, 'Pictures.html', {
         'image_list': image_list, 
-        'nom_foret': nom_foret
+        'nom_foret': nom_foret,
+        'image_path':image_path
     })

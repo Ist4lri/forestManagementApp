@@ -165,3 +165,7 @@ html {
     cursor: url('black.png'), auto;
     color: #fff;
 }
+.warning {
+  margin:0;
+  padding:0;
+}
