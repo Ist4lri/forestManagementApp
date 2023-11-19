@@ -11,7 +11,7 @@
         <a class="forest-return" href="{% url 'enter_forest' %}" title="Choisir une autre forêt">Changer de foret</a>
         <a class="login-link" href="{% url 'connexion' %}">
             <img src="{% static 'Login_logos/Logo_off.png' %}">
-            <img src="{% static 'Login_logos/Logo_on.png' %}" title="Se connecter" class="hidden">
+            <img src="{% static 'Login_logos/Logo_on.png' %}" title="Espace garde" class="hidden">
 
 
         </a>
@@ -30,7 +30,8 @@
 
     <section id="organismes">
         <h2><a href="{% url 'list_species' nom_foret=nom_foret %}"style="display: flex; align-items: center;">Faune et Flore
-            <img src="{% static 'fauneflore.png' %}" style="width: 40px; height: 40px; margin-left: 10px;"></a>
+            <img src="{% static 'fauneflore.png' %}" style="width: 40px; height: 40px; margin-left: 10px;">
+            <img src="{% static 'renard.png' %}" style="width: 40px; height: 40px; margin-left: 10px;"></a>
         </h2>
     </section>
 
@@ -43,15 +44,6 @@
 </h2>
 
     </section>
-
-
-
-
-
-
-
-
-
      <script src="{% static 'js/map.js' %}"></script>
     <script> var latitude = {{ latitude }};
         var longitude = {{ longitude }};

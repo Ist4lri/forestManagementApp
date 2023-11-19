@@ -33,12 +33,14 @@ table {
     width: 25%;
     background-color: transparent;
     margin: 50px;
+    text-align: center;
 }
 
 th {
     background-color: #176200;
     color: #fff;
     padding: 10px;
+    font-size: 30px;
 }
 
 tr:nth-child(odd) {
