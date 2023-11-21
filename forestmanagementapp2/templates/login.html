@@ -7,7 +7,7 @@
     <title>Page de Connexion</title>
 </head>
 <body>
-    <form method="POST" onsubmit="return validateForm()" action="{% url 'connexion' %}">
+    <form method="POST">
         {% csrf_token %}
         <h1>Connexion</h1>
 
@@ -20,18 +20,4 @@
 
         <input type="submit" value="Se connecter">
     </form>
-
-    <script>
-        function validateForm() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-
-            if (username === "" || password === "") {
-                alert("Veuillez remplir tous les champs.");
-                return false; // Empêche l'envoi du formulaire
-            }
-
-            return true; // Le formulaire est soumis si les champs sont remplis
-        }
-    </script>
 {% endblock %}

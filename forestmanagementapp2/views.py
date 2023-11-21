@@ -1,10 +1,13 @@
 import os
 import random
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login
 from django.contrib.auth.models import User
 from .models import Foret, Organisme, Contient, Garde
+
+
 
 def home(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
@@ -35,7 +38,7 @@ def enter_forest(request):
         })
 
 
-def home_page(request, nom_foret):
+def forestSelected(request, nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     foret = Foret.objects.get(nom_foret=nom_foret)
     description = foret.get_description()
@@ -50,17 +53,17 @@ def home_page(request, nom_foret):
 def connexion(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        #user = authenticate(request, username=username, password=password)
-        user = User.objects.filter(username=username, password=password).first()
-        garde= Garde.objects.filter(id_garde=user.id).first()
-        print(garde.id_foret)
-        if user is not None:
+        try:
+            user = User.objects.get(username=request.POST['username'])
+            user.set_password(request.POST['password'])
+        except User.DoesNotExist:
+            user = None
+        if user is not None and user.check_password(request.POST['password']):
             login(request, user)
-            return render('oneForestSelected.html')
+            name_forest_guard = Garde.objects.get(id_garde=user.pk).id_foret
+            return redirect(reverse('forestSelected', kwargs={'nom_foret': name_forest_guard}))
         else:
-            return render(request, 'login.html')
+            return redirect('connexion')
     else:
         return render(request, 'login.html', {'image_path': image_path})
 
