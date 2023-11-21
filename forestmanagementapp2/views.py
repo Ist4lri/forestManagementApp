@@ -1,9 +1,8 @@
 import os
 import random
 from django.shortcuts import render, redirect
-from django.urls import reverse
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 from .models import Foret, Organisme, Contient, Garde
 
@@ -47,7 +46,8 @@ def forestSelected(request, nom_foret):
         'image_path': image_path, 
         'description': description, 
         'latitude': foret.latitude, 
-        'longitude': foret.longitude})
+        'longitude': foret.longitude,
+        })
 
 
 def connexion(request):
@@ -60,8 +60,12 @@ def connexion(request):
             user = None
         if user is not None and user.check_password(request.POST['password']):
             login(request, user)
+            if user.is_authenticated:
+                print("L'utilisateur est connecté avec succès.")
+            else:
+                print("L'authentification a échoué.")
             name_forest_guard = Garde.objects.get(id_garde=user.pk).id_foret
-            return redirect(reverse('forestSelected', kwargs={'nom_foret': name_forest_guard}))
+            return redirect('forestSelected', nom_foret=name_forest_guard)
         else:
             return redirect('connexion')
     else:
