@@ -7,9 +7,17 @@
 <body>
     <header>
         <h1>Bienvenue sur notre gestionnaire d'écosystèmes forestiers !</h1>
+            {% if user.is_authenticated %}
+        <a class="login-link" href="{% url 'deconnexion' %}">
+            <img src="{% static 'Login_logos/Logo_on.png' %}">
+            <img src="{% static 'Login_logos/Logo_off.png' %}" title="Déconnexion" class="hidden">
+        </a>
+        {% else %}
         <a class="login-link" href="{% url 'connexion' %}">
             <img src="{% static 'Login_logos/Logo_off.png' %}">
             <img src="{% static 'Login_logos/Logo_on.png' %}" title="Espace garde" class="hidden">
+        </a>
+        {% endif %}
         </a>
     </header>
 

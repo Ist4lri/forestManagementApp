@@ -1,7 +1,6 @@
 {% extends "allHeadTemplated.html" %}
 {% block body %}
 {% load static %}
-<html>
 <head>
      <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
     <title>Page de Connexion</title>
@@ -13,10 +12,10 @@
 
          <p> Si vous êtes un garde forestier, veuillez-vous authentifier : </p>
         <label for="username">Nom d'utilisateur :</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <input type="text" name="username" required><br><br>
 
         <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password" required><br><br>
+        <input type="password" name="password" required><br><br>
 
         <input type="submit" value="Se connecter">
     </form>
