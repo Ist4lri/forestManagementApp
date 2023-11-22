@@ -17,7 +17,7 @@
     <a class="home-page-return" href="{% url 'home_page' nom_foret=nom_foret %}">Retour</a>
     <table id="table_faune">
         <thead>
-            <th>Voici les animauix présents dans la {{ nom_foret }}</th>
+            <th>Voici les animaux présents dans la {{ nom_foret }}<img src="{% static 'renard.png' %}" style="width: 30px; height: 30px; margin-left: 10px;"></a></th>
         </thead>
 
         <tbody>
@@ -30,7 +30,8 @@
     </table>
     <table id="table_flora">
         <thead>
-            <th>Voici les végétaux présents dans la {{ nom_foret }}</th>
+            <th>Voici les végétaux présents dans la {{ nom_foret }}<img src="{% static 'fauneflore.png' %}" style="width: 30px; height: 30px; margin-left: 10px;"></a>
+            </th>
         </thead>
 
         <tbody>

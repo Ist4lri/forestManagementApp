@@ -17,13 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from forestmanagementapp2.views import v_post_new_incident, v_form_submitted, v_register_new_species, enter_forest, home_page, connexion, organism_info, v_list_of_species, home,pictures
+from forestmanagementapp2.views import v_post_new_incident, v_form_submitted, v_register_new_species, enter_forest, forestSelected, connexion, organism_info, v_list_of_species, home,pictures, deconnexion
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('choixforet/', enter_forest, name="enter_forest"),
-    path('accueil/<str:nom_foret>/', home_page, name='home_page'),
+    path('forestselected/<str:nom_foret>/', forestSelected, name='forestSelected'),
     path('incidentForm/', v_post_new_incident, name="incident_form"),
     path('formSubmitted/', v_form_submitted, name='formSubmitted'),
     path('registerSpecies/', v_register_new_species, name='register_species'),
@@ -31,6 +31,7 @@ urlpatterns = [
     path('login/', connexion, name='connexion'),
     path('listOfSpecies/<str:nom_foret>/info_org/<str:nom_organisme>/', organism_info, name='organism_info'),
     path('', home, name='home'),
-    path('accueil/<str:nom_foret>/pictures', pictures, name='pictures')
+    path('accueil/<str:nom_foret>/pictures', pictures, name='pictures'),
+    path('deconnexion/', deconnexion, name='deconnexion')
 
 ]
