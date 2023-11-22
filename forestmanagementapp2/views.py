@@ -42,13 +42,15 @@ def forestSelected(request, nom_foret):
     foret = Foret.objects.get(nom_foret=nom_foret)
     garde = Garde.objects.get(id_foret=foret.id_foret)
     description = foret.get_description()
+    tel_garde=garde.num_telephone
     return render(request, 'oneForestSelected.html', {
         'nom_foret': nom_foret, 
         'image_path': image_path, 
         'description': description, 
         'latitude': foret.latitude, 
         'longitude': foret.longitude,
-        'id_garde': garde.id_garde
+        'id_garde': garde.id_garde,
+        'tel_garde': tel_garde
         })
 
 

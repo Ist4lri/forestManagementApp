@@ -87,20 +87,17 @@ img {
 }
 
 .prev {
-    left: 10px;
+    left: 50px;
 }
 
 .next {
-    right: 10px;
+    right: 50px;
 }
 
 .prev:hover{
     background-color: #a2695d;
     cursor: url('black.png'), auto;
 }
-footer {
- background: #a7d8a2;
- }
 
 .next:hover{
     background-color: #a2695d;
