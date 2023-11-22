@@ -1,8 +1,8 @@
 import os
 import random
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
 from .models import Foret, Organisme, Contient, Garde
 
@@ -24,7 +24,7 @@ def enter_forest(request):
             foretclean = form.cleaned_data['nom_foret']
             try:
                 foret = Foret.objects.get(nom_foret=foretclean)
-                return redirect('home_page', nom_foret=foret)
+                return redirect('forestSelected', nom_foret=foret)
             except Foret.DoesNotExist:
                 foret = None
     else:
@@ -40,6 +40,7 @@ def enter_forest(request):
 def forestSelected(request, nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     foret = Foret.objects.get(nom_foret=nom_foret)
+    garde = Garde.objects.get(id_foret=foret.id_foret)
     description = foret.get_description()
     return render(request, 'oneForestSelected.html', {
         'nom_foret': nom_foret, 
@@ -47,29 +48,30 @@ def forestSelected(request, nom_foret):
         'description': description, 
         'latitude': foret.latitude, 
         'longitude': foret.longitude,
+        'id_garde': garde.id_garde
         })
 
 
 def connexion(request):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     if request.method == "POST":
-        try:
-            user = User.objects.get(username=request.POST['username'])
-            user.set_password(request.POST['password'])
-        except User.DoesNotExist:
-            user = None
-        if user is not None and user.check_password(request.POST['password']):
-            login(request, user)
-            if user.is_authenticated:
-                print("L'utilisateur est connecté avec succès.")
+            username = request.POST.get('username', False)
+            password = request.POST.get('password', False)
+
+            db_user = User.objects.filter(username=username, password=password).first()   
+            
+            if db_user.username == username and db_user.password == password:
+                login(request, db_user)
+                name_forest_guard = Garde.objects.get(id_garde=db_user.pk).id_foret
+                return redirect('forestSelected', nom_foret=name_forest_guard)
             else:
-                print("L'authentification a échoué.")
-            name_forest_guard = Garde.objects.get(id_garde=user.pk).id_foret
-            return redirect('forestSelected', nom_foret=name_forest_guard)
-        else:
-            return redirect('connexion')
-    else:
-        return render(request, 'login.html', {'image_path': image_path})
+                print("User not found")
+    return render(request, 'login.html', {'image_path': image_path})
+
+def deconnexion(request):
+    logout(request)
+    return redirect('home')
+
 
 def randomImage():
     return [fichier for fichier in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/forest_pic')) if fichier.lower().endswith(('.jpeg'))]

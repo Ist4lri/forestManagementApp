@@ -1,0 +1,16 @@
+{% extends "allHeadTemplated.html" %}
+{% block body %}
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+   <title>Déconnexion</title>
+</head>
+<form method="POST">
+    {% csrf_token %}
+    <h1>Déconnexion</h1>
+
+     <h2>Déconnexion réussie ! A bientôt !</h2>
+
+    <input type="submit" value="Retour à l'acceuil">
+</form>
+{% endblock %}
