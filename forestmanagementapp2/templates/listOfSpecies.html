@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container">
-    <a class="home-page-return" href="{% url 'home_page' nom_foret=nom_foret %}">Retour</a>
+    <a class="home-page-return" href="{% url 'forestSelected' nom_foret=nom_foret %}">Retour</a>
     <table id="table_faune">
         <thead>
             <th>Voici les animaux présents dans la {{ nom_foret }}<img src="{% static 'renard.png' %}" style="width: 30px; height: 30px; margin-left: 10px;"></a></th>

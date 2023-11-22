@@ -29,6 +29,8 @@
     <section class="forest-description">
         <h2> A propos : </h2>
         <p>{{ description }}</p>
+        <p> Pour toutes informations sur la forêt, veuillez-vous adressez au :  </p>
+        <p class="tel_garde">{{tel_garde}}</p>
     </section>
 
     <section id="photos">
@@ -38,7 +40,7 @@
     </section>
 
     <section id="organismes">
-        <h2><a href="{% url 'list_species' nom_foret=nom_foret %}"style="display: flex; align-items: center;">Faune et Flore
+        <h2><a href="{% url 'list_species' nom_foret=nom_foret %}" style="display: flex; align-items: center;">Faune et Flore
             <img src="{% static 'fauneflore.png' %}" style="width: 40px; height: 40px; margin-left: 10px;">
             <img src="{% static 'renard.png' %}" style="width: 40px; height: 40px; margin-left: 10px;"></a>
         </h2>
@@ -56,7 +58,7 @@
     {% if user.is_authenticated and id_garde == user.pk %}
     <section id="Mission">
         <h2>
-            <a href="{% url 'home' %}" style="display: flex; align-items: center;">
+            <a href="{% url 'missions' id_garde=id_garde nom_foret=nom_foret %}" style="display: flex; align-items: center;">
             Missions
             <img src="{% static 'copier-lecriture.png' %}" style="width: 40px; height: 40px; margin-left: 10px;">
             </a>

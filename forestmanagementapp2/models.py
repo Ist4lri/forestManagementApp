@@ -94,29 +94,8 @@ class Organisme(models.Model):
         db_table = 'ORGANISME'
 
 
-class Possede(models.Model):
-    id_mission = models.OneToOneField(
-        Mission, models.DO_NOTHING, db_column='id_mission', primary_key=True)
-    id_garde = models.ForeignKey(
-        Garde, models.DO_NOTHING, db_column='id_garde')
-    date_mission = models.TextField()
-    etat_mission = models.TextField()
-
-    class Meta:
-        managed = False
-        db_table = 'POSSEDE'
 
 
-class Touche(models.Model):
-    id_foret = models.OneToOneField(
-        Foret, models.DO_NOTHING, db_column='id_foret', primary_key=True)
-    id_incident = models.ForeignKey(
-        Incident, models.DO_NOTHING, db_column='id_incident')
-    date_incident = models.TextField()
-
-    class Meta:
-        managed = False
-        db_table = 'TOUCHE'
 
 class AuthUser(models.Model):
     password = models.CharField(max_length=128)
