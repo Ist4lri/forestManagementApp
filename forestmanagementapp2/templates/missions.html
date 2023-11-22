@@ -1,10 +1,39 @@
-<!DOCTYPE html>
+{% extends "allHeadTemplated.html" %}
+{% load static %}
+{% block body %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static  'missions.css' %}">
+    <title>Missions</title>
+
 </head>
 <body>
+ <header>
+        <h1>Missions à effectuer dans la {{ nom_foret }}</h1>
+        <a class="home-page-return" href="{% url 'forestSelected' nom_foret=nom_foret %}">Retour</a>
+    </header>
+
+
+
+
+<table>
+    <tr>
+        <th>Description Mission</th>
+        <th>État Mission</th>
+    </tr>
+
+    {% for mission in missions_list %}
+        <tr>
+
+            <td>{{ mission.description_mission }}</td>
+            <td>{{ mission.etat_mission }}</td>
+        </tr>
+    {% endfor %}
+
+</table>
 
 </body>
 </html>
+{% endblock %}

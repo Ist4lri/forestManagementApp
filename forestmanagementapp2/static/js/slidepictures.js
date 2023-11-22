@@ -15,7 +15,7 @@ function showSlides() {
 
 // Set up click event listeners for arrows
 document.querySelector(".prev").addEventListener("click", function() {
-    let slides = document.getElementsByClassName("mySlides"); // Ajout de cette ligne
+    let slides = document.getElementsByClassName("mySlides");
     slideIndex--;
     if (slideIndex < 0) {
         slideIndex = slides.length - 1;
@@ -24,7 +24,7 @@ document.querySelector(".prev").addEventListener("click", function() {
 });
 
 document.querySelector(".next").addEventListener("click", function() {
-    let slides = document.getElementsByClassName("mySlides"); // Ajout de cette ligne
+    let slides = document.getElementsByClassName("mySlides");
     slideIndex++;
     if (slideIndex >= slides.length) {
         slideIndex = 0;

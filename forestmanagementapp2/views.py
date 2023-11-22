@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
-from .models import Foret, Organisme, Contient, Garde
+from .models import Foret, Organisme, Contient, Garde, Mission
 
 
 
@@ -178,3 +178,17 @@ def pictures(request, nom_foret):
         'nom_foret': nom_foret,
         'image_path':image_path
     })
+
+
+def missions(request, id_garde,nom_foret):
+
+    missions_list = Mission.objects.filter(id_garde=id_garde)
+    print(missions_list)
+    context = {
+        'id_garde': id_garde,
+        'missions_list': missions_list,
+        'nom_foret':nom_foret,
+        'image_path': f"/forest_pic/{random.choice(randomImage())}",
+    }
+
+    return render(request, 'missions.html', context)
