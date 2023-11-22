@@ -7,7 +7,11 @@
 </head>
 <body>
     <header>
+        {% if user.is_authenticated %}
+        <h1>Bienvenue {{user.last_name}} dans la {{ nom_foret }}</h1>
+        {% else %}
         <h1>{{ nom_foret }}</h1>
+        {% endif %}
         <a class="forest-return" href="{% url 'enter_forest' %}" title="Choisir une autre forêt">Changer de foret</a>
         {% if user.is_authenticated %}
         <a class="login-link" href="{% url 'deconnexion' %}">
