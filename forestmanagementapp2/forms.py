@@ -13,7 +13,7 @@ class PostFormOrganism(forms.ModelForm):
     class Meta:
         model = Organisme
         fields = ('nom_organisme', 'nutrition',
-                  'facteur_emission', 'quantite_consommee_CO2')
+                  'facteur_emission', 'quantite_consommee_CO2', 'description', 'type')
 
 
 
