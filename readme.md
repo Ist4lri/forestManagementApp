@@ -18,14 +18,14 @@
 - [x] Page lsite espèce
 - [x] generate random background
 - [ ] Typo and Chore
-- [ ] Fixer le login
+- [x] Fixer le login
 
 
 ### BOTH TODO :
 
 - [x] Créer les tables et les remplir
-- [ ] MaJ des éléments de la forêt, Liste des missions (A faire après login et formu)
-- [ ] Faire un login et des comptes
+- [x] MaJ des éléments de la forêt, Liste des missions (A faire après login et formu)
+- [x] Faire un login et des comptes
 - [x] faire une carte avec MAPS
 
 ### Potentielle idées futures :
