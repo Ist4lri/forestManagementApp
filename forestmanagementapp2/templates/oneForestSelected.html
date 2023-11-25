@@ -8,9 +8,9 @@
 <body>
     <header>
         {% if user.is_authenticated %}
-        <h1>Bienvenue {{user.last_name}} dans la {{ nom_foret }}</h1>
+        <h1>Bienvenue {{user.last_name}} dans la {{ nom_foret }} !</h1>
         {% else %}
-        <h1>{{ nom_foret }}</h1>
+        <h1>Bienvenue dans la {{ nom_foret }} ! </h1>
         {% endif %}
         <a class="forest-return" href="{% url 'enter_forest' %}" title="Choisir une autre forêt">Changer de foret</a>
         {% if user.is_authenticated %}
@@ -26,7 +26,7 @@
         {% endif %}
     </header>
 
-    <section class="forest-description">
+    <section class="description">
         <h2> A propos : </h2>
         <p>{{ description }}</p>
         {% if not user.is_authenticated %}
@@ -61,7 +61,7 @@
     {% if not user.is_authenticated  or id_garde != user.pk %}
     <section id="signaler-incident">
         <h2>
-            <a href="{% url 'incident_form' %}" style="display: flex; align-items: center;">
+            <a href="{% url 'incident_form' nom_foret=nom_foret %}" style="display: flex; align-items: center;">
             Signaler un Incident
             <img src="{% static 'attention.png' %}"style="width: 40px; height: 40px; margin-left: 10px;">
             </a>
@@ -73,7 +73,7 @@
 
     <section id="incidents">
         <h2>
-            <a href="{% url 'incident_form' %}" style="display: flex; align-items: center;">
+            <a href="{% url 'incident_form' nom_foret=nom_foret%}" style="display: flex; align-items: center;">
             Incidents
             <img src="{% static 'attention.png' %}"style="width: 40px; height: 40px; margin-left: 10px;">
             </a>
