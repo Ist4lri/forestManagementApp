@@ -14,7 +14,6 @@
     <body>
 
               <form method="POST">{% csrf_token %}
-
               <h2>{{description_form}}</h2>
               {{ form.as_p }}
               <button type="submit">Enregistrer</button>
