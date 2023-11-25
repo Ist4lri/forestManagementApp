@@ -1,3 +1,5 @@
+
+
 form {
     max-width: 500px;
     margin: 0 auto;
@@ -116,7 +118,7 @@ header {
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 20px 20px;
-    z-index: 100; /* Pour s'assurer que l'en-tête est au-dessus du reste du contenu */
+    z-index: 100;
 
 }
 
@@ -140,4 +142,55 @@ header {
     background-color: #a2695d;
     cursor: url('black.png'), auto;
     color: #fff;
+}
+
+
+.incidents {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 95%%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #a2695d;
+    color: white;
+}
+h1{
+color: #a7d8a2
+}
+
+
+form.specific-page {
+    width: 110%;
+    margin: 0 auto;
+    margin-top:190px;
+    color=black;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #0d6b00;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom:110px;
+}
+
+input[type="checkbox"] {
+
+    width: 30px;
+    height: 30px;
 }
