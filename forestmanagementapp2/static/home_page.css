@@ -170,7 +170,11 @@ html {
   padding:0;
 }
 
-.tel_garde {
+.tel_garde  {
+ font-weight:bold;
+
+}
+.mail_garde {
  font-weight:bold;
 
 }
