@@ -29,7 +29,7 @@
     <section class="description">
         <h2> A propos : </h2>
         <p>{{ description }}</p>
-        {% if not user.is_authenticated %}
+        {% if not user.is_authenticated or id_garde != user.pk %}
         <p> Pour toutes informations sur la forêt, veuillez-vous adressez au :  </p>
         <p class="tel_garde">{{tel_garde}}</p>
         <p> ou à l'addresse mail suivante : </p>
@@ -73,7 +73,7 @@
 
     <section id="incidents">
         <h2>
-            <a href="{% url 'incident_form' nom_foret=nom_foret%}" style="display: flex; align-items: center;">
+            <a href="{% url 'incidents' nom_foret=nom_foret %}" style="display: flex; align-items: center;">
             Incidents
             <img src="{% static 'attention.png' %}"style="width: 40px; height: 40px; margin-left: 10px;">
             </a>
