@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from .forms import PostFormIncident, PostFormOrganism, ForestForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
-from .models import Foret, Organisme, Contient, Garde, Mission
+from .models import Foret, Organisme, Contient, Garde, Mission, Incident
 
 
 
@@ -83,18 +83,21 @@ def randomImage():
 
 def v_form_submitted(request,nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
-    return render(request, 'formSubmitted.html', {'image_path': image_path})
+    return render(request, 'formSubmitted.html', {'image_path': image_path, 'nom_foret': nom_foret})
 
 
 def v_post_new_incident(request,nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
+    forest = Foret.objects.get(nom_foret=nom_foret)
+    id_foret = forest.pk
     if request.method == "POST":
         form = PostFormIncident(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.statut_incident = "En cours"
+            post.id_foret =id_foret
             post.save()
-            return redirect('formSubmitted')
+            return redirect('formSubmitted' , {'nom_foret': nom_foret})
     else:
         form = PostFormIncident()
     return render(request, 'incidentForm.html', {
@@ -194,3 +197,42 @@ def missions(request, id_garde,nom_foret):
     }
 
     return render(request, 'missions.html', context)
+
+
+def update_mission_etat(request,nom_foret):
+    forest = Foret.objects.get(nom_foret=nom_foret)
+    id_foret = forest.pk
+    garde=Garde.objects.get(id_foret=id_foret)
+    id_garde=garde.id_garde
+    missions_list = Mission.objects.filter(id_garde=id_garde)
+    image_path = f"/forest_pic/{random.choice(randomImage())}"
+    if request.method == 'POST':
+        missions_to_update = request.POST.getlist('mission')
+        for mission_id in missions_to_update:
+            mission = Mission.objects.get(pk=mission_id)
+            mission.etat_mission = 'Terminé'
+            mission.save()
+    return render(request, 'missions.html', {'image_path':image_path, 'id_foret':id_foret, 'missions_list': missions_list, 'nom_foret':nom_foret})
+
+
+def incidents(request, nom_foret):
+    forest = Foret.objects.get(nom_foret=nom_foret)
+    id_foret = forest.pk
+    incidents_list=Incident.objects.filter(id_foret=id_foret)
+
+    image_path = f"/forest_pic/{random.choice(randomImage())}"
+    return render(request, 'incidents.html', {'image_path':image_path, 'id_foret':id_foret, 'incidents_list': incidents_list, 'nom_foret':nom_foret})
+
+def update_incident_status(request,nom_foret):
+    forest = Foret.objects.get(nom_foret=nom_foret)
+    id_foret = forest.pk
+    incidents_list = Incident.objects.filter(id_foret=id_foret)
+
+    image_path = f"/forest_pic/{random.choice(randomImage())}"
+    if request.method == 'POST':
+        incidents_to_update = request.POST.getlist('incidents')
+        for incident_id in incidents_to_update:
+            incident = Incident.objects.get(pk=incident_id)
+            incident.statut_incident = 'Terminé'
+            incident.save()
+    return render(request, 'incidents.html', {'image_path':image_path, 'id_foret':id_foret, 'incidents_list': incidents_list, 'nom_foret':nom_foret})
