@@ -43,6 +43,7 @@ def forestSelected(request, nom_foret):
     garde = Garde.objects.get(id_foret=foret.id_foret)
     description = foret.get_description()
     tel_garde=garde.num_telephone
+    mail_garde=garde.mail_garde
     return render(request, 'oneForestSelected.html', {
         'nom_foret': nom_foret, 
         'image_path': image_path, 
@@ -50,7 +51,8 @@ def forestSelected(request, nom_foret):
         'latitude': foret.latitude, 
         'longitude': foret.longitude,
         'id_garde': garde.id_garde,
-        'tel_garde': tel_garde
+        'tel_garde': tel_garde,
+        'mail_garde':mail_garde
         })
 
 
@@ -99,7 +101,7 @@ def v_post_new_incident(request):
         'image_path': image_path,
         'title_page': "Formulaire d'incident",
         'title_form': "Décrivez l'incident",
-        'description_form': "Veuillez décrire l'incident que vous avez vus, et indiquer le lieu en question.",
+        'description_form': "Veuillez décrire l'incident que vous avez vu, et indiquer le lieu en question.",
         'form': form,
     })
 
