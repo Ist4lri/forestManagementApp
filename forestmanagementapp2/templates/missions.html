@@ -17,7 +17,8 @@
 
 
 
-
+<form  method="post" action="{% url 'update_mission_etat' nom_foret=nom_foret %}" >
+    {% csrf_token %}
 <table>
     <tr>
         <th>Description Mission</th>
@@ -28,11 +29,17 @@
         <tr>
 
             <td>{{ mission.description_mission }}</td>
-            <td>{{ mission.etat_mission }}</td>
+            <td>{{ mission.etat_mission }}
+              <input type="checkbox" id="mission_{{ mission.id_mission }}" name="mission" value="{{ mission.id_mission }}"
+                    {% if mission.etat_mission == 'Terminé' %}checked{% endif %}>
+                    <label for="mission_{{ mission.id_mission }}"></label>
+            </td>
+
         </tr>
     {% endfor %}
 
 </table>
+     <button type="submit">Mettre à jour l'état </button>
 
 </body>
 </html>
