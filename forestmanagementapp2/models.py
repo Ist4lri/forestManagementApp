@@ -60,7 +60,7 @@ class Incident(models.Model):
     id_incident = models.AutoField(primary_key=True)
     description_incident = models.TextField()
     statut_incident = models.TextField()
-
+    id_foret=models.IntegerField()
     class Meta:
         managed = False
         db_table = 'INCIDENT'
@@ -83,7 +83,6 @@ class Organisme(models.Model):
     nom_organisme = models.TextField()
     nutrition = models.TextField()
     facteur_emission = models.IntegerField()
-    # Field name made lowercase.
     quantite_consommee_CO2 = models.IntegerField(
         db_column='quantite_consommee_CO2')
     description = models.TextField(blank=True)

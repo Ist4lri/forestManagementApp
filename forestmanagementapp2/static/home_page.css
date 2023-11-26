@@ -5,6 +5,7 @@ body {
 }
 
 header {
+
     background-color: #2a6c2d;
     color: black;
     padding: 20px;
@@ -16,7 +17,7 @@ header {
 .login-link {
     position: absolute;
     top: 10px;
-    right: 5px;
+    right: 50px;
     cursor: url('black.png'), auto;
 }
 
@@ -93,30 +94,49 @@ section {
     border: 1px solid #ccc;
 }
 
-.forest-description {
+.description {
 
     margin: 20px auto;
     padding: 20px;
     max-width: 500px;
-    background-color: rgb(162, 105,93, 0.7); /* Arrière-plan semi-transparent */
-    border: none; /* Supprime la bordure */
+    background-color: rgb(162, 105,93, 0.7);
+    border: none;
+    margin-top:120px;
 }
 
 
 
 .section-description {
+
  text-align: justify;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 55%;
-    background-color: white;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
+ margin: 20px auto;
+ padding: 20px;
+ max-width: 55%;
+ background-color: white;
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+ border-radius: 12px;
+ margin-top:140px;
 }
 
 .section-description p {
     text-align: justify;
 }
+
+.section-description2 {
+
+ text-align: justify;
+ margin: 20px auto;
+ padding: 20px;
+ max-width: 55%;
+ background-color: white;
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+ border-radius: 12px;
+}
+
+.section-description2 p {
+    text-align: justify;
+}
+
 
 section h2 {
     font-size: 1.5rem;
@@ -170,7 +190,11 @@ html {
   padding:0;
 }
 
-.tel_garde {
+.tel_garde  {
+ font-weight:bold;
+
+}
+.mail_garde {
  font-weight:bold;
 
 }

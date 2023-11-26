@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-        <h1>Bienvenue sur notre gestionnaire d'écosystèmes forestiers !</h1>
+        <h1 class="title">Bienvenue sur notre gestionnaire d'écosystèmes forestiers !</h1>
             <a class="home-page-return" href="{% url 'home' %}" title="Retour à la présentation" >Retour</a>
             {% if user.is_authenticated %}
         <a class="login-link" href="{% url 'deconnexion' %}">

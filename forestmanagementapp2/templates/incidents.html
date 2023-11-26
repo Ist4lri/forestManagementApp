@@ -1,0 +1,41 @@
+{% extends "allHeadTemplated.html" %}
+{% block body %}
+{% load static %}
+<title>Incidents</title>
+<link rel="stylesheet" type="text/css" href="{% static 'allPageStyle.css' %}">
+</head>
+
+<body class="incidents">
+<header class="incident">
+    <a class="home-page-return" href="{% url 'forestSelected' nom_foret=nom_foret %}">Retour</a>
+    <h1>Bienvenue dans la {{ nom_foret }}</h1>
+</header>
+
+<form class= "specific-page" method="post" action="{% url 'update_incident_status' nom_foret=nom_foret %}" >
+    {% csrf_token %}
+    <table class="incident-table">
+        <tr>
+            <th>Description de l'incident</th>
+            <th>Statut</th>
+
+        </tr>
+
+        {% for incident in incidents_list %}
+            <tr>
+                <td>{{ incident.description_incident }}</td>
+
+                <td>
+                    {{ incident.statut_incident }}
+                    <input type="checkbox" id="incident_{{ incident.id_incident }}" name="incidents" value="{{ incident.id_incident }}"
+                    {% if incident.statut_incident == 'Terminé' %}checked{% endif %}>
+                    <label for="incident_{{ incident.id_incident }}"></label>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <button type="submit">Mettre à jour le statut</button>
+</form>
+
+</body>
+
+{% endblock %}

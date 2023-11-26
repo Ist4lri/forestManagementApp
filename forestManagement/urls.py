@@ -17,15 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from forestmanagementapp2.views import v_post_new_incident, v_form_submitted, v_register_new_species, enter_forest, forestSelected, connexion, organism_info, v_list_of_species, home,pictures, deconnexion, missions
+from forestmanagementapp2.views import v_post_new_incident, v_form_submitted, v_register_new_species, enter_forest, forestSelected, connexion, organism_info, v_list_of_species, home,pictures, deconnexion, missions, incidents ,update_incident_status, update_mission_etat
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('choixforet/', enter_forest, name="enter_forest"),
     path('forestselected/<str:nom_foret>/', forestSelected, name='forestSelected'),
-    path('incidentForm/', v_post_new_incident, name="incident_form"),
-    path('formSubmitted/', v_form_submitted, name='formSubmitted'),
+    path('accueil/<str:nom_foret>/incidentForm/', v_post_new_incident, name="incident_form"),
+    path('accueil/<str:nom_foret>/formSubmitted/', v_form_submitted, name='formSubmitted'),
     path('registerSpecies/', v_register_new_species, name='register_species'),
     path('listOfSpecies/<str:nom_foret>/', v_list_of_species, name="list_species"),
     path('login/', connexion, name='connexion'),
@@ -33,6 +33,9 @@ urlpatterns = [
     path('', home, name='home'),
     path('accueil/<str:nom_foret>/pictures', pictures, name='pictures'),
     path('deconnexion/', deconnexion, name='deconnexion'),
-    path('<str:nom_foret>/<int:id_garde>/missions/', missions, name='missions')
+    path('<str:nom_foret>/<int:id_garde>/missions/', missions, name='missions'),
+    path('<str:nom_foret>/incidents/', incidents, name='incidents'),
+    path('<str:nom_foret>/update_incident_status/', update_incident_status, name='update_incident_status'),
+    path('<str:nom_foret>/update_mission_etat/', update_mission_etat, name='update_mission_etat')
 
 ]
