@@ -82,9 +82,6 @@ class Organisme(models.Model):
     id_organisme = models.AutoField(primary_key=True)
     nom_organisme = models.TextField()
     nutrition = models.TextField()
-    facteur_emission = models.IntegerField()
-    quantite_consommee_CO2 = models.IntegerField(
-        db_column='quantite_consommee_CO2')
     description = models.TextField(blank=True)
     type = models.TextField(blank=True, choices=[
         ("Faune", "Faune"),
