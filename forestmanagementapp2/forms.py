@@ -12,8 +12,7 @@ class PostFormOrganism(forms.ModelForm):
 
     class Meta:
         model = Organisme
-        fields = ('nom_organisme', 'nutrition',
-                  'facteur_emission', 'quantite_consommee_CO2', 'description', 'type')
+        fields = ('nom_organisme', 'nutrition', 'description', 'type')
 
 
 
@@ -26,4 +25,4 @@ class ForestForm(forms.ModelForm):
 class OrganismForm(forms.ModelForm):
     class Meta:
         model=Contient
-        fields=('id_foret', 'id_organisme', 'nombre_organisme')
+        fields=( 'nombre_organisme',)

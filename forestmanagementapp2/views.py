@@ -1,7 +1,7 @@
 import os
 import random
-from django.shortcuts import render, redirect, HttpResponseRedirect
-from .forms import PostFormIncident, PostFormOrganism, ForestForm
+from django.shortcuts import render, redirect
+from .forms import PostFormIncident, PostFormOrganism, ForestForm, OrganismForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
 from .models import Foret, Organisme, Contient, Garde, Mission, Incident
@@ -109,22 +109,23 @@ def v_post_new_incident(request,nom_foret):
     })
 
 
-def v_register_new_species(request):
+def v_register_new_species(request, nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     if request.method == "POST":
-        form = PostFormOrganism(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.save()
+        formOgra = PostFormOrganism(request.POST)
+        if formOgra.is_valid():
+            postOrga = formOgra.save(commit=False)
+            postOrga.save()
             return redirect('formSubmitted')
     else:
-        form = PostFormOrganism()
+        formOgra = PostFormOrganism()
     return render(request, 'incidentForm.html', {
         'image_path': image_path,
         'title_page': "Formulaire de nouvelle espèce",
         'title_form': "Détailler une nouvelle espèce dans une forêt.",
         'description_form': "Veuillez remplir les champs demandé tel que demandé dans le protocole.",
-        'form': form,
+        'form1': formOgra,
+        'nom_foret' : nom_foret
     })
 
 

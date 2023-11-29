@@ -4,7 +4,7 @@ form {
     max-width: 500px;
     margin: 0 auto;
     margin-top:220px;
-    color=black;
+    color:black;
     padding: 20px;
     background-color: #ffffff;
     border: 2px solid #0d6b00;
@@ -32,14 +32,25 @@ p {
     margin-top: 20px;
 }
 
-form input[type="text"],
-form textarea {
+form textarea:not([name="nutrition"],[name="nom_organisme"]) {
     width: 95%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
     resize: none;
+    overflow: hidden;
+}
+
+form textarea[name="nutrition"],[name="nom_organisme"] {
+    height: 2.5em; /* ou une autre valeur qui convient à votre design */
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: none;
+    overflow: hidden;
 }
 
 form textarea:hover {
@@ -157,7 +168,7 @@ header {
 
 table {
     border-collapse: collapse;
-    width: 95%%;
+    width: 95%;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -180,7 +191,7 @@ form.specific-page {
     width: 110%;
     margin: 0 auto;
     margin-top:190px;
-    color=black;
+    color:black;
     padding: 20px;
     background-color: #ffffff;
     border: 2px solid #0d6b00;
