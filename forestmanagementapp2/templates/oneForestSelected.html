@@ -34,14 +34,14 @@
             <p class="mail_garde">{{mail_garde}}</p>
             <p class="tel_garde">{{tel_garde}}</p>
             {% else %}
-            <p> Pour toutes informations sur la forêt, veuillez-vous adressez au :  </p>
+            <p class="info"> Pour toutes informations sur la forêt, veuillez-vous adressez au :  </p>
             <p class="tel_garde">{{tel_garde}}</p>
-            <p> ou à l'addresse mail suivante : </p>
+            <p class="info"> ou à l'addresse mail suivante : </p>
             <p class="mail_garde"> {{mail_garde}}</p>
             {% endif %}
         {% endif %}
-        {% if user.is_authenticated and id_garde == user.pk %}*
-        <p> Vos informations :  </p>
+        {% if user.is_authenticated and id_garde == user.pk %}
+        <p class="info"> Vos informations :  </p>
         <p class="tel_garde"> Téléphone : {{tel_garde}}</p>
         <p class="mail_garde"> Mail : {{mail_garde}}</p>
        {% endif %}

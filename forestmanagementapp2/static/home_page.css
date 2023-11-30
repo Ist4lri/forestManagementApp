@@ -149,6 +149,11 @@ section p {
     color: black;
     font-weight: normal;
     line-height: 1.5;
+    text-align: justify;
+}
+
+section .mail_garde, .tel_garde, .info {
+    text-align: center;
 }
 
 section a {
