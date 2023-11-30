@@ -43,7 +43,7 @@ form textarea:not([name="nutrition"],[name="nom_organisme"]) {
 }
 
 form textarea[name="nutrition"],[name="nom_organisme"] {
-    height: 2.5em; /* ou une autre valeur qui convient à votre design */
+    height: 2.5em;
     width: 95%;
     padding: 10px;
     margin-bottom: 10px;
@@ -168,14 +168,16 @@ header {
 
 table {
     border-collapse: collapse;
-    width: 95%;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5%;
 }
 
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    text-align: center;
 }
 
 th {
