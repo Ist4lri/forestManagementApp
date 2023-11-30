@@ -40,20 +40,33 @@ def enter_forest(request):
 def forestSelected(request, nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     foret = Foret.objects.get(nom_foret=nom_foret)
-    garde = Garde.objects.get(id_foret=foret.id_foret)
-    description = foret.get_description()
-    tel_garde=garde.num_telephone
-    mail_garde=garde.mail_garde
-    return render(request, 'oneForestSelected.html', {
-        'nom_foret': nom_foret, 
-        'image_path': image_path, 
-        'description': description, 
-        'latitude': foret.latitude, 
-        'longitude': foret.longitude,
-        'id_garde': garde.id_garde,
-        'tel_garde': tel_garde,
-        'mail_garde':mail_garde
+    try : 
+        garde = Garde.objects.get(id_foret=foret.id_foret)
+        description = foret.get_description()
+        tel_garde=garde.num_telephone
+        mail_garde=garde.mail_garde
+        return render(request, 'oneForestSelected.html', {
+            'nom_foret': nom_foret, 
+            'image_path': image_path, 
+            'description': description, 
+            'latitude': foret.latitude, 
+            'longitude': foret.longitude,
+            'id_garde': garde.id_garde,
+            'tel_garde': tel_garde,
+            'mail_garde':mail_garde
         })
+    except Garde.DoesNotExist:
+        description = foret.get_description()
+        return render(request, 'oneForestSelected.html', {
+            'nom_foret': nom_foret, 
+            'image_path': image_path, 
+            'description': description, 
+            'latitude': foret.latitude, 
+            'longitude': foret.longitude,
+            'id_garde': "",
+            'tel_garde': "Il n'y a pas de gardes dans cette forêt.",
+            'mail_garde':""
+            })
 
 
 def connexion(request):
@@ -124,7 +137,7 @@ def v_register_new_species(request, nom_foret):
         'title_page': "Formulaire de nouvelle espèce",
         'title_form': "Détailler une nouvelle espèce dans une forêt.",
         'description_form': "Veuillez remplir les champs demandé tel que demandé dans le protocole.",
-        'form1': formOgra,
+        'form': formOgra,
         'nom_foret' : nom_foret
     })
 
@@ -154,18 +167,12 @@ def organism_info(request,nom_organisme,nom_foret):
 def v_list_of_species(request, nom_foret):
     image_path = f"/forest_pic/{random.choice(randomImage())}"
     forest = Foret.objects.get(nom_foret=nom_foret)
-    #Je récupère l'id_foret correspondant car dans la table contient j'en ai besoin
     id_forest = forest.pk
-    #Je récupère dans la table contient les id_organismes qui correpondent à mon id_foret
     contient_entries = Contient.objects.filter(id_foret=id_forest).values_list('id_organisme', flat=True)
-
-    # Je transforme le QuerySet en une liste Python qui contient la liste de mes id_foret
     id_organismes = list(contient_entries)
-
-    # Je cherche les noms d'organismes associés aux id de ma liste id_organismes
     organismes= Organisme.objects.filter(id_organisme__in=id_organismes).values_list('nom_organisme', 'type')
-    faune_list = [org[0] for org in organismes if org[1] == 'Faune']
-    flore_list = [org[0] for org in organismes if org[1] == 'Flore']
+    faune_list = sorted([org[0] for org in organismes if org[1] == 'Faune'])
+    flore_list = sorted([org[0] for org in organismes if org[1] == 'Flore'])
 
 
     return render(request, "listOfSpecies.html", {
@@ -187,7 +194,6 @@ def pictures(request, nom_foret):
 
 
 def missions(request, id_garde,nom_foret):
-
     missions_list = Mission.objects.filter(id_garde=id_garde)
     print(missions_list)
     context = {
