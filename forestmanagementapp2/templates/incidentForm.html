@@ -13,8 +13,7 @@
 <body>
     <form method="POST">{% csrf_token %}
     <h2>{{description_form}}</h2>
-    {{ form1.as_p }}
-    {{ form2.as_p}}
+    {{ form.as_p }}
     <button type="submit">Enregistrer</button>
     <p>Merci !</p>
     </form>

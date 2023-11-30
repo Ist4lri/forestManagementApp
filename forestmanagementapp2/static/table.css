@@ -41,6 +41,7 @@ th {
     color: #fff;
     padding: 10px;
     font-size: 30px;
+    text-align: center;
 }
 
 tr:nth-child(odd) {
@@ -53,6 +54,7 @@ tr:nth-child(even) {
 
 td {
     padding: 10px;
+    text-align: center;
 }
 
 .button-link {
