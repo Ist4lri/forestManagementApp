@@ -29,17 +29,21 @@
     <section class="description">
         <h2> A propos : </h2>
         <p>{{ description }}</p>
-        {% if not user.is_authenticated or id_garde != user.pk %}
-        <p> Pour toutes informations sur la forêt, veuillez-vous adressez au :  </p>
-        <p class="tel_garde">{{tel_garde}}</p>
-        <p> ou à l'addresse mail suivante : </p>
-        <p class="mail_garde"> {{mail_garde}}</p>
-           {% endif %}
+        {% if not user.is_authenticated or id_garde != user.pk%}
+            {% if id_garde == 0 %}
+            <p class="mail_garde">{{mail_garde}}</p>
+            <p class="tel_garde">{{tel_garde}}</p>
+            {% else %}
+            <p> Pour toutes informations sur la forêt, veuillez-vous adressez au :  </p>
+            <p class="tel_garde">{{tel_garde}}</p>
+            <p> ou à l'addresse mail suivante : </p>
+            <p class="mail_garde"> {{mail_garde}}</p>
+            {% endif %}
+        {% endif %}
         {% if user.is_authenticated and id_garde == user.pk %}*
         <p> Vos informations :  </p>
         <p class="tel_garde"> Téléphone : {{tel_garde}}</p>
         <p class="mail_garde"> Mail : {{mail_garde}}</p>
-
        {% endif %}
     </section>
 

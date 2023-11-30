@@ -63,9 +63,9 @@ def forestSelected(request, nom_foret):
             'description': description, 
             'latitude': foret.latitude, 
             'longitude': foret.longitude,
-            'id_garde': "",
-            'tel_garde': "Il n'y a pas de gardes dans cette forêt.",
-            'mail_garde':""
+            'id_garde': 0,
+            'tel_garde': "En cas de danger, contactez le 18.",
+            'mail_garde':"Il n'y a pas de garde dans cette forêt."
             })
 
 
