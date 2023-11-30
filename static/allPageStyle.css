@@ -1,0 +1,209 @@
+
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top:220px;
+    color:black;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #0d6b00;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+
+    font-size: 30px;
+    color: #a7d8a2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+form textarea:not([name="nutrition"],[name="nom_organisme"]) {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: none;
+    overflow: hidden;
+}
+
+form textarea[name="nutrition"],[name="nom_organisme"] {
+    height: 2.5em;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: none;
+    overflow: hidden;
+}
+
+form textarea:hover {
+    border-color: #007810;
+}
+
+form textarea:focus {
+    outline: none;
+    border-color: #03b92d;
+    box-shadow: 0 0 13px rgba(0, 105, 2, 0.5);
+}
+
+form input[type="number"] {
+    text-align: left;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #176200;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #176200;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #00ae2e;
+    cursor: url('black.png'), auto;
+}
+
+button:hover {
+    background-color: #00ae2e;
+    cursor: url('black.png'), auto;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 14px;
+}
+
+.success-message {
+    color: #008000;
+    font-size: 14px;
+}
+
+html {
+    cursor: url('white.png'), auto;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: rgba(128, 128, 128, 0.5);
+    text-align: center;
+    cursor: url('white.png'), auto;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom : 200 px;
+    width: 100%;
+    background-color: #2a6c2d;
+    color: #a7d8a2;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 20px 20px;
+    z-index: 100;
+
+}
+
+
+.home-page-return {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: url('white.png'), auto;
+    transition: background-color 0.3s;
+}
+
+.home-page-return:hover {
+    background-color: #a2695d;
+    cursor: url('black.png'), auto;
+    color: #fff;
+}
+
+
+.incidents {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    text-align: center;
+}
+
+th {
+    background-color: #a2695d;
+    color: white;
+}
+h1{
+color: #a7d8a2
+}
+
+
+form.specific-page {
+    width: 110%;
+    margin: 0 auto;
+    margin-top:190px;
+    color:black;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #0d6b00;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom:110px;
+}
+
+input[type="checkbox"] {
+
+    width: 30px;
+    height: 30px;
+}
